@@ -1,12 +1,20 @@
-import React from 'react';
-import {Counter} from "./components/Counter";
+import React, {Suspense} from 'react';
+import {Link, Route, Routes} from "react-router-dom";
 import './index.scss'
+import {MainPageAsync} from "./pages/MainPage/MainPage/MainPage.async";
+import {AboutPageAsync} from "./pages/MainPage/AboutPage/AboutPage.async";
 
 const App = () => {
     return (
         <div className='app'>
-            dsfsada
-            <Counter/>
+            <Link to={'/'}>Главная</Link>
+            <Link to={'/about'}>О сайте</Link>
+            <Suspense fallback={<div>Загрузка...</div>}>
+                <Routes>
+                    <Route path={'/'} element={<MainPageAsync/>}/>
+                    <Route path={'/about'} element={<AboutPageAsync/>}/>
+                </Routes>
+            </Suspense>
         </div>
     );
 };
