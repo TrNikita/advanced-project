@@ -2,9 +2,11 @@ import HTMLWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { ReactRefreshPlugin } from '@pmmmwh/react-refresh-webpack-plugin';
 
-export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+// import { ReactRefreshPlugin } from '@pmmmwh/react-refresh-webpack-plugin';
+
+export function buildPlugins({ paths, isDev }: BuildOptions):
+	webpack.WebpackPluginInstance[] {
 	return [
 		new HTMLWebpackPlugin({
 			template: paths.html,
