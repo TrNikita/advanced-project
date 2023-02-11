@@ -2,13 +2,13 @@ module.exports = {
 	'env': {
 		'browser': true,
 		'es2021': true,
-		'jest': true
+		'jest': true,
 	},
 	'extends': [
 		'eslint:recommended',
 		'plugin:react/recommended',
 		'plugin:@typescript-eslint/recommended',
-		'plugin:i18next/recommended'
+		'plugin:i18next/recommended',
 	],
 	'overrides': [],
 	'parser': '@typescript-eslint/parser',
@@ -19,7 +19,7 @@ module.exports = {
 	'plugins': [
 		'react',
 		'@typescript-eslint',
-		'i18next'
+		'i18next',
 	],
 	'rules': {
 		'indent': [
@@ -43,7 +43,10 @@ module.exports = {
 			'always',
 		],
 		'react/jsx-indent': [2, 'tab'],
-		'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx', '.tsx'] }],
+		'react/jsx-filename-extension': [
+			1,
+			{ 'extensions': ['.js', '.jsx', '.tsx'] },
+		],
 		'no-unused-vars': 'warn',
 		'react/react-in-jsx-scope': 'off',
 		'no-mixed-spaces-and-tabs': 'off',
@@ -51,8 +54,9 @@ module.exports = {
 		'no-undef': 'warn',
 		'@typescript-eslint/ban-ts-comment': [
 			'error',
-			{ 'ts-ignore': 'allow-with-description' },],
-		'i18next/no-literal-string': ['error',{ markupOnly: true }]
+			{ 'ts-ignore': 'allow-with-description' }],
+		'i18next/no-literal-string': ['error', { markupOnly: true }],
+		'max-len': ['error', { ignoreComments: true }],
 	},
 	globals: {
 		'__IS_DEV__': true,
