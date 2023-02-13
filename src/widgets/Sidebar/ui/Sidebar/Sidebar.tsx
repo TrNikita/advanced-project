@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/ui/LangSwitcher';
 import { useTranslation } from 'react-i18next';
-import { Button } from '../../../../shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button/Button';
 
 interface SidebarProps {
 	className?: string;
