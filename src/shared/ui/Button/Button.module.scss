@@ -16,3 +16,20 @@
     background: none;
     border: 1px solid var(--primary-color);
 }
+
+.background {
+    color: var(--primary-color);
+    background: var(--bg-color);
+    border: none;
+}
+
+.backgroundInverted {
+    color: var(--inverted-primary-color);
+    background: var(--inverted-bg-color);
+    border: none;
+}
+
+.square {
+    width: 40px;
+    height: 40px;
+}
