@@ -54,6 +54,7 @@ module.exports = {
 		'@typescript-eslint/ban-ts-comment': [
 			'error',
 			{ 'ts-ignore': 'allow-with-description' }],
+		'@typescript-eslint/no-var-requires': 'off',
 		'i18next/no-literal-string': ['error',
 			{
 				markupOnly: true,
