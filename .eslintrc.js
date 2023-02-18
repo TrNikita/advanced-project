@@ -61,7 +61,7 @@ module.exports = {
 				ignoreAttribute: ['data-testid', 'to'],
 			},
 		],
-		'max-len': ['error', { ignoreComments: true, code: 80 }],
+		'max-len': ['error', { ignoreComments: true, code: 90 }],
 	},
 	globals: {
 		'__IS_DEV__': true,
