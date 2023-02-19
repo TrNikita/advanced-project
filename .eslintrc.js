@@ -21,6 +21,7 @@ module.exports = {
 		'@typescript-eslint',
 		'i18next',
 		'jsx-a11y',
+		'react-hooks'
 	],
 	'rules': {
 		'indent': [
@@ -66,6 +67,8 @@ module.exports = {
 		'max-len': ['error', { ignoreComments: true, code: 90 }],
 		'jsx-a11y/no-static-element-interactions': 'off',
 		'jsx-a11y/click-events-have-key-events': 'off',
+		'react-hooks/rules-of-hooks': 'error',
+		'react-hooks/exhaustive-deps': 'error'
 	},
 	globals: {
 		'__IS_DEV__': true,
