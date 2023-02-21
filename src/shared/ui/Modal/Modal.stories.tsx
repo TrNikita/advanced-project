@@ -19,13 +19,13 @@ const Template: ComponentStory<typeof Modal>
 export const Primary = Template.bind({});
 Primary.args = {
 	isOpen: true,
-	children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam animi commodi, dolore doloremque dolorum ducimus eveniet fugit harum hic laborum libero natus nobis optio recusandae sapiente similique sit ut? Consequatur culpa cum, debitis deserunt doloremque doloribus est et fugit hic ipsam molestiae nemo nesciunt odit praesentium ratione rerum sed tempora totam. Accusamus, corporis doloremque dolores ea hic ipsam laborum magni minima neque nesciunt numquam officiis optio provident repellat sint ullam unde vel voluptates? Distinctio earum eius eveniet fugit illo labore laborum libero nemo, nostrum pariatur ut, velit vitae voluptatibus. Debitis esse fugit iure libero neque quis recusandae rerum veniam.'
+	children: 'Lorem'
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
 	isOpen: true,
-	children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam animi commodi, dolore doloremque dolorum ducimus eveniet fugit harum hic laborum libero natus nobis optio recusandae sapiente similique sit ut? Consequatur culpa cum, debitis deserunt doloremque doloribus est et fugit hic ipsam molestiae nemo nesciunt odit praesentium ratione rerum sed tempora totam. Accusamus, corporis doloremque dolores ea hic ipsam laborum magni minima neque nesciunt numquam officiis optio provident repellat sint ullam unde vel voluptates? Distinctio earum eius eveniet fugit illo labore laborum libero nemo, nostrum pariatur ut, velit vitae voluptatibus. Debitis esse fugit iure libero neque quis recusandae rerum veniam.'
+	children: 'Lorem'
 };
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
