@@ -27,4 +27,4 @@ Dark.args = {
 	isOpen: true,
 	// children: 'Lorem'
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+// Dark.decorators = [ThemeDecorator(Theme.DARK)];
