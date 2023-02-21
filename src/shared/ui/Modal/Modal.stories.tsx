@@ -25,9 +25,6 @@ Primary.args = {
 export const Dark = Template.bind({});
 Dark.args = {
 	isOpen: true,
-	children: 'Lorem'
+	// children: 'Lorem'
 };
-
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
-
-
