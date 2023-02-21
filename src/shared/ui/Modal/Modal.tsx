@@ -67,7 +67,7 @@ export const Modal = (props: ModalProps) => {
 				classNames(
 					cls.Modal,
 					mods,
-					[className, theme]
+					[className, theme, 'app_modal']
 				)}
 			>
 				<div
