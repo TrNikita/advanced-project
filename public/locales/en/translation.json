@@ -6,5 +6,10 @@
   "Страница не найдена": "Page not found",
   "Главная": "Main",
   "О сайте": "About",
-  "ПЕРЕКЛЮЧИТЬ": "Toggle"
+  "ПЕРЕКЛЮЧИТЬ": "Toggle",
+  "Вы ввели неверный логин или пароль": "Wrong password",
+  "Войти": "Log in",
+  "Форма авторизации":"Authorization",
+  "введите username": "enter username",
+  "введите пароль": "enter password"
 }
