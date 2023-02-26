@@ -3,7 +3,7 @@ import cls from './LoginForm.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { loginActions } from '../../model/slice/loginSlice';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
@@ -16,11 +16,13 @@ export interface LoginFormProps {
 
 const LoginForm = memo((props: LoginFormProps) => {
 	const { t } = useTranslation();
+	const dispatch = useDispatch();
+	const store = useStore();
+
 	const {
 		className,
 	} = props;
 
-	const dispatch = useDispatch();
 	const { username, password, isLoading, error } = useSelector(getLoginState);
 
 	const onChangeUsername = useCallback((value: string) => {
