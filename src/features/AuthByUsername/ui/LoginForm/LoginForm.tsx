@@ -10,11 +10,11 @@ import { getLoginState } from '../../model/selectors/getLoginState/getLoginState
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 
-interface LoginFormProps {
+export interface LoginFormProps {
 	className?: string;
 }
 
-export const LoginForm = memo((props: LoginFormProps) => {
+const LoginForm = memo((props: LoginFormProps) => {
 	const { t } = useTranslation();
 	const {
 		className,
@@ -71,3 +71,5 @@ export const LoginForm = memo((props: LoginFormProps) => {
 		</div>
 	);
 });
+
+export default LoginForm;
