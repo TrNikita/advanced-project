@@ -22,6 +22,6 @@ export interface ReducerManager {
 	remove: (key: StateSchemaKey) => void;
 }
 
-// export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
-// 	reducerManager:
-// }
+export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
+	reducerManager: ReducerManager;
+}

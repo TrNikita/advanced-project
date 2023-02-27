@@ -1,11 +1,15 @@
-import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
+import { configureStore, DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
 import { StateSchema } from './StateSchema';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager';
 
-export function createReduxStore(initialState?: StateSchema) {
+export function createReduxStore(
+	initialState?: StateSchema,
+	asyncReducers?: ReducersMapObject<StateSchema>
+) {
 	const rootReducers: ReducersMapObject<StateSchema> = {
+		...asyncReducers,
 		counter: counterReducer,
 		user: userReducer,
 	};
@@ -13,7 +17,7 @@ export function createReduxStore(initialState?: StateSchema) {
 	const reducerManager = createReducerManager(rootReducers);
 
 	const store = configureStore<StateSchema>({
-		reducer: rootReducers,
+		reducer: reducerManager.reduce,
 		devTools: __IS_DEV__,
 		preloadedState: initialState
 	});
