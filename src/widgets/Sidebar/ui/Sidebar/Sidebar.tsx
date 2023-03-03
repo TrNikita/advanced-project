@@ -1,9 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Sidebar.module.scss';
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/ui/LangSwitcher';
-import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { SidebarItemsList } from '../../model/items';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
@@ -12,13 +11,12 @@ interface SidebarProps {
 	className?: string;
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
-	const { t } = useTranslation();
-
+export const Sidebar = memo(({ className }: SidebarProps) => {
 	const [collapsed, setCollapsed] = useState(false);
 	const onToggle = () => {
 		setCollapsed(prevState => !prevState);
 	};
+
 	return (
 		<div
 			data-testid='sidebar'
@@ -56,4 +54,4 @@ export const Sidebar = ({ className }: SidebarProps) => {
 			</div>
 		</div>
 	);
-};
+});

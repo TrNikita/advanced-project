@@ -8,6 +8,7 @@ interface InputProps extends HTMLInputProps {
 	className?: string;
 	value?: string;
 	onChange?: (value: string) => void;
+	autoFocus?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -25,12 +26,12 @@ export const Input = memo((props: InputProps) => {
 	const [isFocused, setIsFocused] = useState(false);
 	const [caretPosition, setCaretPosition] = useState(0);
 
-	useEffect(()=>{
+	useEffect(() => {
 		if (autoFocus) {
 			setIsFocused(true);
 			ref.current.focus();
 		}
-	},[autoFocus]);
+	}, [autoFocus]);
 
 	const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		onChange?.(e.target.value);
@@ -46,7 +47,7 @@ export const Input = memo((props: InputProps) => {
 	};
 
 	const onSelect = (e: any) => {
-	  setCaretPosition(e?.target?.selectionStart || 0);
+		setCaretPosition(e?.target?.selectionStart || 0);
 	};
 
 	return (
