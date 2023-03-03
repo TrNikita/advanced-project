@@ -1,5 +1,14 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import {
+	DynamicModuleLoader, ReducersList
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { profileReducer } from 'entities/Profile/model/slice/profileSlice';
+
+const reducers: ReducersList = {
+	profile: profileReducer
+};
+
 
 interface ProfilePageProps {
 	className?: string;
@@ -12,15 +21,17 @@ const ProfilePage = (props: ProfilePageProps) => {
 	} = props;
 
 	return (
-		<div className={
-			classNames(
-				'',
-				{},
-				[className]
-			)}
-		>
-			{t('Profile Page')}
-		</div>
+		<DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+			<div className={
+				classNames(
+					'',
+					{},
+					[className]
+				)}
+			>
+				{t('Profile Page')}
+			</div>
+		</DynamicModuleLoader>
 	);
 };
 
