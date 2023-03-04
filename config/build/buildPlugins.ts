@@ -6,7 +6,7 @@ import { BuildOptions } from './types/config';
 
 // import { ReactRefreshPlugin } from '@pmmmwh/react-refresh-webpack-plugin';
 
-export function buildPlugins({ paths, isDev }: BuildOptions):
+export function buildPlugins({ paths, isDev, apiUrl }: BuildOptions):
 	webpack.WebpackPluginInstance[] {
 
 	const plugins = [
@@ -20,6 +20,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions):
 		}),
 		new webpack.DefinePlugin({
 			__IS_DEV__: JSON.stringify(isDev),
+			__API__: JSON.stringify(apiUrl),
 		}),
 	];
 
