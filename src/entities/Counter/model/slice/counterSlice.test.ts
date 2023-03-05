@@ -1,5 +1,4 @@
 import { counterActions, counterReducer } from './CounterSlice';
-import { StateSchema } from 'app/providers/StoreProvider';
 import { CounterSchema } from '../types/counterSchema';
 
 describe('counterSlice.test', () => {

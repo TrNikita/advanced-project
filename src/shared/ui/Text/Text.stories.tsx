@@ -5,7 +5,6 @@ import 'app/styles/index.scss';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { OutlineDark } from 'shared/ui/Button/Button.stories';
 
 export default {
 	title: 'shared/Text',

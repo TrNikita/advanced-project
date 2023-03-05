@@ -3,7 +3,7 @@ import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ProfileSchema } from 'entities/Profile';
 import {
-	AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject
+	AnyAction, CombinedState, Dispatch, EnhancedStore, Reducer, ReducersMapObject
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { To } from 'history';
@@ -39,4 +39,5 @@ export interface ThunkExtraArg {
 export interface ThunkConfig<T> {
 	rejectValue: T;
 	extra: ThunkExtraArg;
+	dispatch?: Dispatch;
 }
