@@ -3,10 +3,17 @@ import {
 	DynamicModuleLoader,
 	ReducersList
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { profileReducer } from 'entities/Profile/model/slice/profileSlice';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { fetchProfileData, ProfileCard } from 'entities/Profile';
+import {
+	fetchProfileData,
+	getProfileData,
+	getProfileError,
+	getProfileIsLoading,
+	ProfileCard,
+	profileReducer
+} from 'entities/Profile';
 
 const reducers: ReducersList = {
 	profile: profileReducer
@@ -22,6 +29,10 @@ const ProfilePage = (props: ProfilePageProps) => {
 	} = props;
 
 	const dispatch = useAppDispatch();
+	const data = useSelector(getProfileData);
+	const isLoading = useSelector(getProfileIsLoading);
+	const error = useSelector(getProfileError);
+
 	useEffect(()=>{
 		dispatch(fetchProfileData());
 	},[dispatch]);
@@ -35,7 +46,11 @@ const ProfilePage = (props: ProfilePageProps) => {
 					[className]
 				)}
 			>
-				<ProfileCard/>
+				<ProfileCard
+					data={data	}
+					isLoading={isLoading}
+					error={error}
+				/>
 			</div>
 		</DynamicModuleLoader>
 	);

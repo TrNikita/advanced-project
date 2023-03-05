@@ -14,7 +14,7 @@ export const fetchProfileData =
 
 				try {
 					const response = await extra.api.get<Profile>('/profile');
-
+					throw new Error();
 					return response.data;
 				} catch (e) {
 					console.log('e', e);
