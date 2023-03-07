@@ -28,10 +28,11 @@
   "profile": {
     "first": "Никита",
     "lastname": "Трохов",
-    "age": 22,
+    "age": 2299,
     "currency": "RUB",
     "country": "Russia",
-    "city": "Красноярск",
+    "city": "Крkjkасноярск",
     "username": "admin",
     "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
-  }}
+  }
+}
