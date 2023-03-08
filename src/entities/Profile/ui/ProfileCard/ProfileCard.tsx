@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import cls from './ProfileCard.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
@@ -66,11 +66,15 @@ export const ProfileCard = (props: ProfileCardProps) => {
 		</div>);
 	}
 
+	const mods: Mods = {
+		[cls.editing]: !readonly,
+	};
+
 	return (
 		<div className={
 			classNames(
 				cls.ProfileCard,
-				{},
+				mods,
 				[className]
 			)}
 		>
