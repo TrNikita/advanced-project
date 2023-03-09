@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Sidebar.module.scss';
-import React, { memo, useState } from 'react';
+import React, { memo, useMemo, useState } from 'react';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/ui/LangSwitcher';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
@@ -16,6 +16,15 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
 	const onToggle = () => {
 		setCollapsed(prevState => !prevState);
 	};
+
+	const itemsList = useMemo(() =>
+		SidebarItemsList.map((item) => (
+			<SidebarItem
+				item={item}
+				collapsed={collapsed}
+				key={item.path}
+			/>
+		)), [collapsed]);
 
 	return (
 		<div

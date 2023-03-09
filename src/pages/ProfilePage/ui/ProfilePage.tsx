@@ -1,5 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { DynamicModuleLoader,
+import {
+	DynamicModuleLoader,
 	ReducersList
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useCallback, useEffect } from 'react';
@@ -16,6 +17,8 @@ import {
 	profileReducer
 } from 'entities/Profile';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
+import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country';
 
 const reducers: ReducersList = {
 	profile: profileReducer
@@ -65,6 +68,14 @@ const ProfilePage = (props: ProfilePageProps) => {
 		dispatch(profileActions.updateProfile({ username: value || '' }));
 	}, [dispatch]);
 
+	const onChangeCurrency = useCallback((currency: Currency) => {
+		dispatch(profileActions.updateProfile({ currency }));
+	}, [dispatch]);
+
+	const onChangeCountry = useCallback((country: Country) => {
+		dispatch(profileActions.updateProfile({ country }));
+	}, [dispatch]);
+
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount>
 			<div className={
@@ -86,6 +97,8 @@ const ProfilePage = (props: ProfilePageProps) => {
 					onChangeAge={onChangeAge}
 					onChangeAvatar={onChangeAvatar}
 					onChangeUsername={onChangeUsername}
+					onChangeCurrency={onChangeCurrency}
+					onChangeCounty={onChangeCountry}
 				/>
 			</div>
 		</DynamicModuleLoader>
