@@ -1,0 +1,51 @@
+import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
+import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
+import { updateProfileData } from './updateProfileData';
+import { ValidateProfileErrors } from 'entities/Profile';
+
+const data = {
+	username: 'admin',
+	age: 31,
+	country: Country.Russia,
+	lastname: 'Asd',
+	first: 'Qwe',
+	currency: Currency.EUR,
+};
+
+describe('updateProfileData.test', () => {
+	test('success', async () => {
+		const thunk = new TestAsyncThunk(updateProfileData, {
+			profile: {
+				form: data
+			}
+		});
+
+		thunk.api.put.mockReturnValue(Promise.resolve({ data: data }));
+
+		const result = await thunk.callThunk();
+
+		expect(thunk.api.put).toHaveBeenCalled();
+		expect(result.meta.requestStatus).toBe('fulfilled');
+		expect(result.payload).toEqual(data);
+	});
+
+	test('error', async () => {
+		const thunk = new TestAsyncThunk(updateProfileData, {
+			profile: {
+				form: data
+			}
+		});
+
+		thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
+
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		// @ts-ignore
+		const result = await thunk.callThunk();
+		expect(result.meta.requestStatus).toBe('rejected');
+		expect(result.payload).toEqual([
+			ValidateProfileErrors.SERVER_ERROR
+		]);
+	});
+});
