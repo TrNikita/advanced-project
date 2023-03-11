@@ -1,4 +1,3 @@
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
@@ -46,6 +45,21 @@ describe('updateProfileData.test', () => {
 		expect(result.meta.requestStatus).toBe('rejected');
 		expect(result.payload).toEqual([
 			ValidateProfileErrors.SERVER_ERROR
+		]);
+	});
+
+	test('validate error', async () => {
+		const thunk = new TestAsyncThunk(updateProfileData, {
+			profile: {
+				form: { ...data, lastname: '' }
+			}
+		});
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		// @ts-ignore
+		const result = await thunk.callThunk();
+		expect(result.meta.requestStatus).toBe('rejected');
+		expect(result.payload).toEqual([
+			ValidateProfileErrors.INCORRECT_USER_DATA
 		]);
 	});
 });
