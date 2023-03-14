@@ -11,9 +11,12 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { useSelector } from 'react-redux';
 import {
-	getArticleDetailsData, getArticleDetailsError,
+	getArticleDetailsData,
+	getArticleDetailsError,
 	getArticleDetailsIsLoading
 } from '../../../../pages/ArticleDetailsPage/ui/ArticleDetailsPage/articleDetails';
+import { Text, TextAlign } from 'shared/ui/Text/Text';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 
 interface ArticleDetailsProps {
 	className?: string;
@@ -28,7 +31,8 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 	const { t } = useTranslation();
 	const { className, id } = props;
 	const dispatch = useAppDispatch();
-	const isLoading = useSelector(getArticleDetailsIsLoading);
+	// const isLoading = useSelector(getArticleDetailsIsLoading);
+	const isLoading = true;
 	const article = useSelector(getArticleDetailsData);
 	const error = useSelector(getArticleDetailsError);
 
@@ -40,11 +44,20 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
 	if (isLoading) {
 		content = (
-			<div>Loading...</div>
+			<div>
+				<Skeleton className={cls.avatar} width={200} height={200} border={'50%'} />
+				<Skeleton className={cls.title} width={300} height={32}/>
+				<Skeleton className={cls.skeleton} width={600} height={24}/>
+				<Skeleton className={cls.skeleton} width='100%' height={200}/>
+				<Skeleton className={cls.skeleton} width='100%' height={200}/>
+			</div>
 		);
 	} else if (error) {
 		content = (
-			<div>{error}</div>
+			<Text
+				align={TextAlign.CENTER}
+				title={t('Произошла ошибка при загрузке статьи')}
+			/>
 		);
 	} else content = (
 		<div>Article Details</div>
