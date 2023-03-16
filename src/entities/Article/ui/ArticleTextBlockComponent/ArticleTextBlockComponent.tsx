@@ -3,10 +3,11 @@ import cls from './ArticleTextBlockComponent.module.scss';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { ArticleTextBlock } from '../../model/types/article';
+import { Text } from 'shared/ui/Text/Text';
 
 interface ArticleTextBlockComponentProps {
 	className?: string;
-	block: ArticleTextBlock;
+	block?: ArticleTextBlock;
 }
 
 export const ArticleTextBlockComponent = memo((props: ArticleTextBlockComponentProps) => {
@@ -18,7 +19,15 @@ export const ArticleTextBlockComponent = memo((props: ArticleTextBlockComponentP
 
 	return (
 		<div className={classNames(cls.ArticleTextBlockComponent, {}, [className])}>
-			ArticleTextBlockComponent
+			{block?.title && (
+				<Text
+					title={block?.title}
+					className={cls.title}
+				/>
+			)}
+			{block?.paragraphs.map((paragraph) => (
+				<Text key={paragraph} text={paragraph} className={cls.paragraph}/>
+			))}
 		</div>
 	);
 });

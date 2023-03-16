@@ -2,7 +2,10 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback, useEffect } from 'react';
 import cls from './ArticleDetails.module.scss';
 import { useTranslation } from 'react-i18next';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+	DynamicModuleLoader,
+	ReducersList
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
@@ -19,9 +22,15 @@ import EyeIcon from 'shared/assets/icons/EyeIcon.svg';
 import CalendarIcon from 'shared/assets/icons/CalendarIcon.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
-import { ArticleCodeBlockComponent } from 'entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
-import { ArticleImageBlockComponent } from 'entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
-import { ArticleTextBlockComponent } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+import {
+	ArticleCodeBlockComponent
+} from 'entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import {
+	ArticleImageBlockComponent
+} from 'entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
+import {
+	ArticleTextBlockComponent
+} from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface ArticleDetailsProps {
 	className?: string;
@@ -43,18 +52,19 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 	const renderBlock = useCallback((block: ArticleBlock) => {
 		switch (block.type) {
 		case ArticleBlockType.CODE:
-			return <ArticleCodeBlockComponent/>;
+			return <ArticleCodeBlockComponent key={block.id} className={cls.block} block={block}/>;
 		case ArticleBlockType.IMAGE:
-			return <ArticleImageBlockComponent/>;
+			return <ArticleImageBlockComponent key={block.id} className={cls.block} block={block}/>;
 		case ArticleBlockType.TEXT:
-			return <ArticleTextBlockComponent/>;
+			return <ArticleTextBlockComponent key={block.id} className={cls.block} block={block}/>;
 		default:
 			return null;
 		}
 	}, []);
 
 	useEffect(() => {
-		dispatch(fetchArticleById(id));
+		if (__PROJECT__ !== 'storybook')
+			dispatch(fetchArticleById(id));
 	}, [dispatch, id]);
 
 	let content;
