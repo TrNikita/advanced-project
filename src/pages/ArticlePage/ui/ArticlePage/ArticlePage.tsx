@@ -1,6 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticlePage.module.scss';
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 
 interface ArticlePageProps {
@@ -8,7 +7,6 @@ interface ArticlePageProps {
 }
 
 const ArticlePage = (props: ArticlePageProps) => {
-	const { t } = useTranslation();
 	const { className } = props;
 
 	return (
