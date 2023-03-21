@@ -10,7 +10,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 interface CommentCardProps {
 	className?: string;
-	comment: Comment;
+	comment?: Comment;
 	isLoading?: boolean;
 }
 
@@ -18,13 +18,17 @@ export const CommentCard = memo((props: CommentCardProps) => {
 	const { className, isLoading, comment } = props;
 	if (isLoading) {
 		return (
-			<div className={classNames(cls.CommentCard, {}, [className])}>
+			<div className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
 				<div className={cls.header}>
 					<Skeleton width={30} height={30} border='50%'/>
 					<Skeleton height={16} width={100} className={cls.username}/>
 				</div>
 				<Skeleton width={'100%'} height={50} className={cls.text}/>
 			</div>);
+	}
+
+	if (!comment) {
+		return null;
 	}
 
 	return (
