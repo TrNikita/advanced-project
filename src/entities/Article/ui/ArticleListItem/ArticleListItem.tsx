@@ -6,6 +6,8 @@ import { Article, ArticleView } from '../../model/types/article';
 import { Text } from 'shared/ui/Text/Text';
 import { Icon } from 'shared/ui/Icon/Icon';
 import EyeIcon from 'shared/assets/icons/EyeIcon.svg';
+import { Card } from 'shared/ui/Card/Card';
+import { useHover } from 'shared/lib/hooks/useHover/useHover';
 
 interface ArticleListItemProps {
 	className?: string;
@@ -16,6 +18,8 @@ interface ArticleListItemProps {
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
 	const { t } = useTranslation();
 	const { className, article, view } = props;
+	const [isHover, bindHover] = useHover();
+	console.log('isHover', isHover);
 
 	if (view === ArticleView.BIG) {
 		<div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
@@ -24,8 +28,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 	}
 
 	return (
-		<div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-			<div className={cls.card}>
+		<div {...bindHover} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+			<Card className={cls.card}>
 				<div className={cls.imageWrapper}>
 					<img src={article.img} className={cls.img} alt={article.title}/>
 					<Text text={article.createdAt} className={cls.date}/>
@@ -36,7 +40,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 					<Icon Svg={EyeIcon}/>
 				</div>
 				<Text text={article.title} className={cls.title}/>
-			</div>
+			</Card>
 		</div>
 	);
 });

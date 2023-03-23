@@ -7,12 +7,24 @@
 }
 
 .SMALL {
+    cursor: pointer;
     width: 230px;
+    transition: 0.2s;
 
-    .card {
-        padding: 15px;
-        background: var(--card-bg);
-        border-radius: 12px;
+    .date {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
+    }
+
+    &:hover {
+        transform: scale(1.01);
+        opacity: 0.8;
+
+        .date {
+            display: block;
+        }
     }
 
     .imageWrapper {
@@ -24,12 +36,6 @@
     .img {
         width: 200px;
         height: 200px;
-    }
-
-    .date {
-        position: absolute;
-        top: 0;
-        right: 0;
     }
 
     .infoWrapper {
