@@ -2,6 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticlePage.module.scss';
 import { memo } from 'react';
 import { Article, ArticleList } from 'entities/Article';
+import { ArticleView } from 'entities/Article/model/types/article';
 
 interface ArticlePageProps {
 	className?: string;
@@ -14,6 +15,11 @@ const article = {
 	'img': 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
 	'views': 1022,
 	'createdAt': '26.02.2022',
+	user: {
+		id: '1',
+		username: 'Poli Robocar',
+		avatar: 'https://academy.avast.com/hubfs/New_Avast_Academy/Hackers/Hacker-Thumb-a1.png'
+	},
 	'type': [
 		'IT',
 		'SCIENCE',
@@ -110,7 +116,15 @@ const ArticlePage = (props: ArticlePageProps) => {
 
 	return (
 		<div className={classNames(cls.ArticlePage, {}, [className])}>
-			<ArticleList articles={[article]}/>
+			<ArticleList
+				view={ArticleView.SMALL}
+				articles={new Array(16)
+					.fill(0)
+					.map((item, index) => ({
+						...article,
+						id: String(index)
+					}))
+				}/>
 		</div>
 	);
 };
