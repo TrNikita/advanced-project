@@ -34,7 +34,7 @@ export const loginByUsername =
 					);
 					dispatch(userActions.setAuthData(response.data));
 
-					extra.navigate?.('/about');
+					// extra.navigate?.('/about');
 
 					return response.data;
 				} catch (e) {
