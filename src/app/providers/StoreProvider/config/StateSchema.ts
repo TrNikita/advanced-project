@@ -9,10 +9,12 @@ import { AxiosInstance } from 'axios';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlePageSchema } from 'pages/ArticlePage';
+import { UISchema } from 'features/UI';
 
 export interface StateSchema {
 	counter: CounterSchema;
 	user: UserSchema;
+	ui: UISchema;
 
 	//Асинхронные редюсеры
 	loginForm?: LoginSchema;
