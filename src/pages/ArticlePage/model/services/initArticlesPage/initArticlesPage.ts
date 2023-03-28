@@ -16,9 +16,7 @@ export const initArticlesPage =
 
 				if (!inited) {
 					dispatch(articlePageActions.initState());
-					dispatch(fetchArticlesList({
-						page: 1,
-					}));
+					dispatch(fetchArticlesList({ replace: true }));
 				}
 			}
 		);
