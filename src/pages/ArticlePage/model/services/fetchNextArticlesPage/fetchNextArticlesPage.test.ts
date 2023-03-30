@@ -13,7 +13,7 @@ describe('fetchNextArticlesPage.test', () => {
 				entities: {},
 				limit: 5,
 				isLoading: false,
-				hasMore: true
+				hasMore: true,
 			}
 		});
 
