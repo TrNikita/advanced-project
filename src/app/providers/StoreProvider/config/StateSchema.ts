@@ -6,7 +6,7 @@ import { ArticleDetailsSchema } from 'entities/Article';
 
 import { AnyAction, CombinedState, Dispatch, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import { ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlePageSchema } from 'pages/ArticlePage';
 import { UISchema } from 'features/UI';
@@ -21,6 +21,7 @@ export interface StateSchema {
 	profile?: ProfileSchema;
 	articleDetails?: ArticleDetailsSchema;
 	articleDetailsComments?: ArticleDetailsCommentsSchema;
+	articleDetailsRecommendations?: ArticleDetailsRecommendationsSchema;
 	addCommentForm?: AddCommentFormSchema;
 	articlePage?: ArticlePageSchema;
 }

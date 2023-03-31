@@ -33,7 +33,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
 	const { t } = useTranslation();
 
-
 	const renderArticle = (article: Article) => {
 		return (
 			<ArticleListItem
