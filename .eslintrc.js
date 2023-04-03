@@ -22,6 +22,7 @@ module.exports = {
 		'i18next',
 		'jsx-a11y',
 		'react-hooks',
+		'trn-plugin'
 	],
 	'rules': {
 		'indent': [
@@ -73,7 +74,8 @@ module.exports = {
 		'react-hooks/exhaustive-deps': 'error',
 		'react/display-name': 'off',
 		'jsx-a11y/no-autofocus': 'off',
-		'react/no-array-index-key':'off'
+		'react/no-array-index-key':'off',
+		'trn-plugin/path-checker': 'error'
 	},
 	globals: {
 		'__IS_DEV__': true,
