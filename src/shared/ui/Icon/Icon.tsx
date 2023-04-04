@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Icon.module.scss';
-import { useTranslation } from 'react-i18next';
 
 interface IconProps {
 	className?: string;

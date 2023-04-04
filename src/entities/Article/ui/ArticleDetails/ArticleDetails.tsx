@@ -24,13 +24,13 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import {
 	ArticleCodeBlockComponent
-} from 'entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+} from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import {
 	ArticleImageBlockComponent
-} from 'entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
+} from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import {
 	ArticleTextBlockComponent
-} from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface ArticleDetailsProps {
 	className?: string;

@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleViewSelector.module.scss';
-import { useTranslation } from 'react-i18next';
 import { ArticleView } from '../../model/types/article';
 import ListIcon from 'shared/assets/icons/list-24-24.svg';
 import TiledIcon from 'shared/assets/icons/tiled-24-24.svg';
@@ -26,7 +25,6 @@ const viewTypes = [
 ];
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
-	const { t } = useTranslation();
 	const { className, onViewClick, view } = props;
 
 	const onClick = (newView: ArticleView) => () => {
