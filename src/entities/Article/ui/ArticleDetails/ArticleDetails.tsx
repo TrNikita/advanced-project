@@ -31,6 +31,7 @@ import {
 import {
 	ArticleTextBlockComponent
 } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { HStack, VStack } from 'shared/ui/Stack';
 
 interface ArticleDetailsProps {
 	className?: string;
@@ -54,19 +55,16 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 		case ArticleBlockType.CODE:
 			return <ArticleCodeBlockComponent
 				key={block.id}
-				className={cls.block}
 				block={block}
 			/>;
 		case ArticleBlockType.IMAGE:
 			return <ArticleImageBlockComponent
 				key={block.id}
-				className={cls.block}
 				block={block}
 			/>;
 		case ArticleBlockType.TEXT:
 			return <ArticleTextBlockComponent
 				key={block.id}
-				className={cls.block}
 				block={block}
 			/>;
 		default:
@@ -85,10 +83,10 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 		content = (
 			<div>
 				<Skeleton className={cls.avatar} width={200} height={200} border={'50%'}/>
-				<Skeleton className={cls.title} width={300} height={32}/>
-				<Skeleton className={cls.skeleton} width={600} height={24}/>
-				<Skeleton className={cls.skeleton} width='100%' height={200}/>
-				<Skeleton className={cls.skeleton} width='100%' height={200}/>
+				<Skeleton width={300} height={32}/>
+				<Skeleton width={600} height={24}/>
+				<Skeleton width='100%' height={200}/>
+				<Skeleton width='100%' height={200}/>
 			</div>
 		);
 	} else if (error) {
@@ -100,36 +98,42 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 		);
 	} else content = (
 		<>
-			<div className={cls.avatarWrapper}>
+			<HStack
+				justify={'center'}
+				max
+			>
 				<Avatar
 					size={200}
 					src={article?.img}
 					className={cls.avatar}
 				/>
-			</div>
-			<Text
-				className={cls.title}
-				title={article?.title}
-				text={article?.subtitle}
-				size={TextSize.L}
-			/>
-			<div className={cls.articleInfo}>
-				<Icon className={cls.icon} Svg={EyeIcon}/>
-				<Text text={String(article?.views)}/>
-			</div>
-			<div className={cls.articleInfo}>
-				<Icon className={cls.icon} Svg={CalendarIcon}/>
-				<Text text={String(article?.createdAt)}/>
-			</div>
+			</HStack>
+			<VStack gap={'4'}>
+				<Text
+					title={article?.title}
+					text={article?.subtitle}
+					size={TextSize.L}
+				/>
+				<HStack gap={'8'}>
+					<Icon Svg={EyeIcon}/>
+					<Text text={String(article?.views)}/>
+				</HStack>
+				<HStack gap={'8'}>
+					<Icon Svg={CalendarIcon}/>
+					<Text text={String(article?.createdAt)}/>
+				</HStack>
+			</VStack>
 			{article?.blocks.map(renderBlock)}
 		</>
 	);
 
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-			<div className={classNames(cls.ArticleDetails, {}, [className])}>
+			<VStack
+				gap={'16'}
+				className={classNames(cls.ArticleDetails, {}, [className])}>
 				{content}
-			</div>
+			</VStack>
 		</DynamicModuleLoader>
 	);
 });
