@@ -11,7 +11,26 @@ export default {
 	},
 } as ComponentMeta<typeof ListBox>;
 
-const Template: ComponentStory<typeof ListBox> = (args) => <ListBox />;
+const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args}/>;
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+	onChange: (value: string) => '',
+	label: 'asd',
+	defaultValue: 'qwe',
+	value: 'zxc',
+	items: [
+		{
+			value: '123',
+			content: '456'
+		},
+		{
+			value: '456',
+			content: '789'
+		},
+		{
+			value: '789',
+			content: '123'
+		},
+	]
+};
