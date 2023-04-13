@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 
 export default {
-	title: 'shared/ArticleDetailsComments',
+	title: 'pages/ArticleEditPage/ArticleDetailsComments',
 	component: ArticleDetailsComments,
 	argTypes: {
 		backgroundColor: { control: 'color' },

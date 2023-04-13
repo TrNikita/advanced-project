@@ -21,6 +21,10 @@ import { ValidateProfileErrors } from '../../model/types/editableProfileCardSche
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { ProfileCard } from 'entities/Profile';
+import {
+	EditableProfileCardHeader
+} from '../EditableProfileCardHeader/EditableProfileCardHeader';
+import { VStack } from 'shared/ui/Stack';
 
 interface EditableProfileCardProps {
 	className?: string;
@@ -32,7 +36,7 @@ const reducers: ReducersList = {
 };
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
-	const { className } = props;
+	const { className, id } = props;
 	const { t } = useTranslation('profile');
 
 	const dispatch = useAppDispatch();
@@ -41,7 +45,6 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 	const error = useSelector(getProfileError);
 	const readonly = useSelector(getProfileReadonly);
 	const validateErrors = useSelector(getProfileValidateErrors);
-	const { id } = useParams<{ id: string }>();
 
 	const validateErrorTranslates = {
 		[ValidateProfileErrors.SERVER_ERROR]: t('Ошибка сервера'),
@@ -92,14 +95,17 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers}>
-
-			<div className={classNames(cls.EditableProfileCard, {}, [className])}>
+			<VStack
+				gap={'8'}
+				max
+				className={classNames(cls.EditableProfileCard, {}, [className])}>
+				<EditableProfileCardHeader/>
 				{validateErrors?.length && validateErrors.map((err) =>
 					(<Text
-							theme={TextTheme.ERROR}
-							text={validateErrorTranslates[err]}
-							key={err}
-						/>
+						theme={TextTheme.ERROR}
+						text={validateErrorTranslates[err]}
+						key={err}
+					/>
 					))}
 				<ProfileCard
 					data={formData}
@@ -115,7 +121,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 					onChangeCurrency={onChangeCurrency}
 					onChangeCounty={onChangeCountry}
 				/>
-			</div>
+			</VStack>
 		</DynamicModuleLoader>
 	);
 });
