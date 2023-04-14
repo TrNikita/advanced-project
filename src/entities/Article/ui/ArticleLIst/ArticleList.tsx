@@ -15,6 +15,7 @@ interface ArticleListProps {
 	isLoading?: boolean;
 	view?: ArticleView;
 	target?: HTMLAttributeAnchorTarget;
+	virtualized?: boolean;
 }
 
 const getSkeletons = (view: ArticleView) =>
@@ -30,7 +31,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
 		isLoading,
 		view = ArticleView.SMALL,
 		articles,
-		target
+		target,
+		virtualized = true
 	} = props;
 
 	const { t } = useTranslation();
@@ -94,17 +96,31 @@ export const ArticleList = memo((props: ArticleListProps) => {
 					ref={registerChild}
 					className={classNames(cls.ArticleList, {}, [className, cls[view]])}
 				>
-					<List
-						height={height ?? 700}
-						rowCount={rowCount}
-						rowHeight={isBig ? 700 : 330}
-						rowRenderer={rowRender}
-						width={width ? width - 80 : 700}
-						autoHeight
-						onScroll={onChildScroll}
-						isScrolling={isScrolling}
-						scrollTop={scrollTop}
-					/>
+					{virtualized
+						? (<List
+							height={height ?? 700}
+							rowCount={rowCount}
+							rowHeight={isBig ? 700 : 330}
+							rowRenderer={rowRender}
+							width={width ? width - 80 : 700}
+							autoHeight
+							onScroll={onChildScroll}
+							isScrolling={isScrolling}
+							scrollTop={scrollTop}
+						/>
+						)
+						: (
+							articles.map(item => (
+								<ArticleListItem
+									article={item}
+									view={view}
+									target={target}
+									key={item.id}
+									className={cls.card}
+								/>
+							))
+						)
+					}
 					{isLoading && getSkeletons(view)}
 				</div>
 			)}
