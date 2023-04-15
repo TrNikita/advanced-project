@@ -30,7 +30,10 @@ export const CommentList = memo((props: CommentListProps) => {
 	}
 
 	return (
-		<VStack max gap={'8'}>
+		<VStack
+			gap='16'
+			max
+		>
 			{comments?.length
 				? comments.map(comment => (
 					<CommentCard
