@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import ArticlePage from './ArticlePage';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
 	title: 'pages/ArticlePage/ArticlePage',
@@ -9,6 +10,7 @@ export default {
 	argTypes: {
 		backgroundColor: { control: 'color' },
 	},
+	decorators: [StoreDecorator({})]
 } as ComponentMeta<typeof ArticlePage>;
 
 const Template: ComponentStory<typeof ArticlePage> = (args) => <ArticlePage {...args} />;
