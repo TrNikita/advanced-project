@@ -81,6 +81,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
 	}
 
 	return (
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		// @ts-ignore
 		<WindowScroller
 			scrollElement={document.getElementById(PAGE_ID) as Element}
 		>
@@ -93,21 +95,26 @@ export const ArticleList = memo((props: ArticleListProps) => {
 				onChildScroll
 			}) => (
 				<div
+					// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+					// @ts-ignore
 					ref={registerChild}
 					className={classNames(cls.ArticleList, {}, [className, cls[view]])}
 				>
 					{virtualized
-						? (<List
-							height={height ?? 700}
-							rowCount={rowCount}
-							rowHeight={isBig ? 700 : 330}
-							rowRenderer={rowRender}
-							width={width ? width - 80 : 700}
-							autoHeight
-							onScroll={onChildScroll}
-							isScrolling={isScrolling}
-							scrollTop={scrollTop}
-						/>
+						? (
+							// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+							// @ts-ignore
+							<List
+								height={height ?? 700}
+								rowCount={rowCount}
+								rowHeight={isBig ? 700 : 330}
+								rowRenderer={rowRender}
+								width={width ? width - 80 : 700}
+								autoHeight
+								onScroll={onChildScroll}
+								isScrolling={isScrolling}
+								scrollTop={scrollTop}
+							/>
 						)
 						: (
 							articles.map(item => (

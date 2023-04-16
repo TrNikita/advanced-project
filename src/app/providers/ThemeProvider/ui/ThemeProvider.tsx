@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useState } from 'react';
+import React, { FC, ReactNode, useMemo, useState } from 'react';
 import
 {
 	LOCAL_STORAGE_THEME_KEY,
@@ -12,9 +12,10 @@ const defaultTheme =
 
 interface ThemeProviderProps {
 	initialTheme?: Theme;
+	children: ReactNode;
 }
 
-const ThemeProvider: FC<ThemeProviderProps> = (props) => {
+const ThemeProvider = (props: ThemeProviderProps) => {
 
 	const {
 		children, initialTheme
