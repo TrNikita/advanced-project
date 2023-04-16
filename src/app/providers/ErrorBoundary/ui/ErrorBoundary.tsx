@@ -1,7 +1,7 @@
 import { types } from 'sass';
 import Error = types.Error;
 import React, { ErrorInfo, ReactNode, Suspense } from 'react';
-import { PageError } from 'widgets/PageError/ui/PageError';
+import { PageError } from 'widgets/PageError';
 
 interface ErrorBoundaryProps {
 	children: ReactNode;
