@@ -1,5 +1,3 @@
-import { types } from 'sass';
-import Error = types.Error;
 import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 import { PageError } from 'widgets/PageError';
 
