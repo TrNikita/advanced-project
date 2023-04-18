@@ -22,7 +22,7 @@ export function Popover(props: PopoverProps) {
 	return (
 		<HPopover className={
 			classNames(
-				cls.Popover,
+				'',
 				{},
 				[className, popupCls.popup]
 			)}>
