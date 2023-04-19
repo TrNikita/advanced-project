@@ -1,7 +1,9 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
+
 import { getProfileForm } from './getProfileForm';
+
 
 describe('getProfileForm.test', () => {
 	test('should return form', () => {
@@ -25,5 +27,3 @@ describe('getProfileForm.test', () => {
 		expect(getProfileForm(state as StateSchema)).toEqual(undefined);
 	});
 });
-
-

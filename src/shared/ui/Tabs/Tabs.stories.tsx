@@ -1,7 +1,8 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
 
 import { Tabs } from './Tabs';
+
 
 export default {
 	title: 'shared/Tabs',

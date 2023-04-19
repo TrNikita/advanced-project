@@ -1,5 +1,7 @@
 import { counterActions, counterReducer } from './CounterSlice';
+
 import { CounterSchema } from '../types/counterSchema';
+
 
 describe('counterSlice.test', () => {
 	test('decrement', () => {
@@ -22,4 +24,3 @@ describe('counterSlice.test', () => {
 		).toEqual({ value: 1 });
 	});
 });
-

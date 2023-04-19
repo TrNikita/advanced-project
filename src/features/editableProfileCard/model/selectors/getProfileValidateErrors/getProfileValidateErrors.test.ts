@@ -1,6 +1,9 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
+
 import { getProfileValidateErrors } from './getProfileValidateErrors';
+
 import { ValidateProfileErrors } from '../../consts/consts';
+
 
 describe('getProfileValidateErrors.test', () => {
 	test('should work with filled state', () => {
@@ -23,5 +26,3 @@ describe('getProfileValidateErrors.test', () => {
 		expect(getProfileValidateErrors(state as StateSchema)).toEqual(undefined);
 	});
 });
-
-

@@ -1,9 +1,11 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react';
 
-import { AppLink, AppLinkTheme } from './AppLink';
 import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+
+import { AppLink, AppLinkTheme } from './AppLink';
+
 
 export default {
 	title: 'shared/AppLink',
@@ -54,5 +56,3 @@ RedDark.args = {
 	theme: AppLinkTheme.RED
 };
 RedDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-

@@ -1,7 +1,8 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
 
 import { Code } from './Code';
+
 
 export default {
 	title: 'shared/Code',
@@ -27,4 +28,3 @@ Normal.args = {
 		'\n' +
 		'export const Normal = Template.bind({});'
 };
-

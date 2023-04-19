@@ -1,9 +1,13 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './LoginModal.module.scss';
-import { Modal } from '@/shared/ui/Modal/Modal';
-import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 import { Suspense } from 'react';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Loader } from '@/shared/ui/Loader/Loader';
+import { Modal } from '@/shared/ui/Modal/Modal';
+
+import cls from './LoginModal.module.scss';
+
+import { LoginFormAsync } from '../LoginForm/LoginForm.async';
+
 
 interface LoginModalProps {
 	className?: string;

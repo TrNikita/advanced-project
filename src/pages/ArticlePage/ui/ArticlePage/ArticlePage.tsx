@@ -1,17 +1,21 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticlePage.module.scss';
 import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSearchParams } from 'react-router-dom';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articlePageReducer } from '../../model/slices/articlePageSlice';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from '@/widgets/Page/Page';
+
+import cls from './ArticlePage.module.scss';
+
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
-import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
-import { useSearchParams } from 'react-router-dom';
+import { articlePageReducer } from '../../model/slices/articlePageSlice';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
-import { useTranslation } from 'react-i18next';
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
+
 
 interface ArticlePageProps {
 	className?: string;

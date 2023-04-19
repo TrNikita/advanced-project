@@ -1,8 +1,10 @@
-import { loginByUsername } from '@/features/AuthByUsername/model/services/loginByUsername/loginByUsername';
-import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { fetchProfileData } from './fetchProfileData';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
+import { loginByUsername } from '@/features/AuthByUsername/model/services/loginByUsername/loginByUsername';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+
+import { fetchProfileData } from './fetchProfileData';
+
 
 const data = {
 	username: 'admin',

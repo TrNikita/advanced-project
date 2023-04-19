@@ -1,5 +1,6 @@
 import { MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
 
+
 interface UseModalProps {
 	onClose?: () => void;
 	isOpen?: boolean;

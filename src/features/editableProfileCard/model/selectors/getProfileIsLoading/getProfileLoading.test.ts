@@ -1,5 +1,7 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
+
 import { getProfileIsLoading } from './getProfileIsLoading';
+
 
 describe('getProfileLoading.test', () => {
 	test('should work with filled state', () => {
@@ -14,5 +16,3 @@ describe('getProfileLoading.test', () => {
 		expect(getProfileIsLoading(state as StateSchema)).toEqual(undefined);
 	});
 });
-
-

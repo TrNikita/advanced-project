@@ -1,5 +1,7 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
+
 import { getProfileReadonly } from './getProfileReadonly';
+
 
 describe('getProfileReadonly.test', () => {
 	test('should return readonly true', () => {
@@ -14,5 +16,3 @@ describe('getProfileReadonly.test', () => {
 		expect(getProfileReadonly(state as StateSchema)).toEqual(undefined);
 	});
 });
-
-

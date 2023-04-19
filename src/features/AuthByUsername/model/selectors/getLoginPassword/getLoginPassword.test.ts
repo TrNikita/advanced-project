@@ -1,5 +1,7 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
+
 import { getLoginPassword } from './getLoginPassword';
+
 
 describe('getLoginIsLoading.test', () => {
 	test('should return value', () => {
@@ -15,4 +17,3 @@ describe('getLoginIsLoading.test', () => {
 		expect(getLoginPassword(state as StateSchema)).toEqual('');
 	});
 });
-

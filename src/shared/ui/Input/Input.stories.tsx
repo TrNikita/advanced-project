@@ -1,8 +1,9 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
 
 import '@/app/styles/index.scss';
 import { Input } from './Input';
+
 
 export default {
 	title: 'shared/Input',
