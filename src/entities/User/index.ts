@@ -4,7 +4,7 @@ export {
 
 export {
 	getUserInited
-} from 'entities/User/model/selectors/getUserInited/getUserInited';
+} from '@/entities/User/model/selectors/getUserInited/getUserInited';
 
 export {
 	isUserAdmin,

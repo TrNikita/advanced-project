@@ -1,8 +1,8 @@
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleInfiniteList.module.scss';
 import { useTranslation } from 'react-i18next';
-import { ArticleList } from 'entities/Article';
+import { ArticleList } from '@/entities/Article';
 import { useSelector } from 'react-redux';
 import { getArticles } from '../../model/slices/articlePageSlice';
 import {
@@ -10,7 +10,7 @@ import {
 	getArticlesPageIsLoading,
 	getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors';
-import { Text } from 'shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text/Text';
 
 interface ArticleInfiniteListProps {
 	className?: string;

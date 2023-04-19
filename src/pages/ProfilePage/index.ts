@@ -1,4 +1,4 @@
 export {
 	ProfilePageAsync as	ProfilePage
-} from 'pages/ProfilePage/ui/ProfilePage.async';
+} from '@/pages/ProfilePage/ui/ProfilePage.async';
 

@@ -1,6 +1,6 @@
 import { loginByUsername } from './loginByUsername';
-import { userActions } from 'entities/User';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { userActions } from '@/entities/User';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 // import axios from 'axios';
 // import { Dispatch } from '@reduxjs/toolkit';
 // import { StateSchema } from 'app/providers/StoreProvider';
