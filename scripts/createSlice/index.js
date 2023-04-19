@@ -1,5 +1,6 @@
 const createTemplate = require('./templates/createTemplate');
 
+
 const layer = process.argv[2];
 const sliceName = process.argv[3];
 

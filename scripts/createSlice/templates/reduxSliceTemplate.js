@@ -1,5 +1,6 @@
 const firstCharUpperCase = require('../firstCharUpperCase');
 
+
 module.exports = (sliceName) => {
 	const typeName = `${firstCharUpperCase(sliceName)}Schema`;
 
