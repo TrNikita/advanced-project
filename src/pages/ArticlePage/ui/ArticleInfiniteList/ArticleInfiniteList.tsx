@@ -6,8 +6,6 @@ import { ArticleList } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text } from '@/shared/ui/Text/Text';
 
-import cls from './ArticleInfiniteList.module.scss';
-
 
 import {
 	getArticlesPageError,
@@ -34,7 +32,7 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
 	}
 
 	return (
-		<div className={classNames(cls.ArticleInfiniteList, {}, [className])}>
+		<div className={classNames('', {}, [className])}>
 			<ArticleList
 				isLoading={isLoading}
 				view={view}

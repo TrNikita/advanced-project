@@ -3,6 +3,7 @@ import { Fragment, ReactNode } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
+import { Button } from '@/shared/ui/Button/Button';
 
 import cls from './Dropdown.module.scss';
 
@@ -44,8 +45,7 @@ export function Dropdown(props: DropdownProps) {
 			<Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
 				{items?.map((item) => {
 					const content = ({ active }: { active: boolean }) => (
-						<button
-							type='button'
+						<Button
 							onClick={item.onClick}
 							disabled={item.disabled}
 							className={
@@ -55,7 +55,7 @@ export function Dropdown(props: DropdownProps) {
 								)}
 						>
 							{item.content}
-						</button>
+						</Button>
 					);
 
 					return item.href ?
