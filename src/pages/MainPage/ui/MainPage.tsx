@@ -14,6 +14,7 @@ const MainPage = () => {
 				defaultValue={t('Выберите значение')}
 				value={undefined}
 				onChange={(value: string) => {
+					return null;
 				}}
 				items={[
 					{ value: '1', content: '123' },

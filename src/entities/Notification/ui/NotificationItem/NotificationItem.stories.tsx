@@ -5,14 +5,23 @@ import { NotificationItem } from './NotificationItem';
 
 
 export default {
-	title: 'shared/NotificationItem',
+	title: 'entities/NotificationItem',
 	component: NotificationItem,
 	argTypes: {
 		backgroundColor: { control: 'color' },
 	},
+	// decorators: [StoreDecorator({})]
 } as ComponentMeta<typeof NotificationItem>;
 
 const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />;
 
+const notification = {
+	id: '1',
+	title: 'Уведомление',
+	description: 'Описание',
+};
+
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+	item: notification
+};

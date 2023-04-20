@@ -7,6 +7,7 @@
 // @ts-ignore
 import path = require('path');
 
+
 export default {
 
 	// A set of global variables that need to be available in all test environments
