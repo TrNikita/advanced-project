@@ -25,7 +25,7 @@ export const fetchNextArticlesPage =
 
 				if (hasMore && !isLoading) {
 					dispatch(articlePageActions.setPage(page + 1));
-					dispatch(fetchArticlesList({ replace: true }));
+					dispatch(fetchArticlesList({ replace: false }));
 				}
 			}
 		);
