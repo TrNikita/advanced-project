@@ -597,8 +597,7 @@
           ]
         }
       ]
-    }
-,
+    },
     {
       "id": "22",
       "title": "Научная статья - Биология",
@@ -1243,6 +1242,13 @@
       "rate": 5,
       "feedback": "йййййй",
       "id": "X1z7SiP"
+    },
+    {
+      "userId": "1",
+      "articleId": "25",
+      "rate": 5,
+      "feedback": "хорошая статья",
+      "id": "RQFGyMC"
     }
   ],
   "profile-ratings": [
