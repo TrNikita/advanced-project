@@ -87,7 +87,7 @@ module.exports = {
 		'react/display-name': 'off',
 		'jsx-a11y/no-autofocus': 'off',
 		'react/no-array-index-key': 'off',
-		'trn-plugin/path-checker': 'error',
+		'trn-plugin/path-checker': ['error', { alias: '@' }],
 		'no-multiple-empty-lines': ['error', { 'max': 2, 'maxBOF': 0, 'maxEOF': 0 }],
 		'import/order': [
 			'error',

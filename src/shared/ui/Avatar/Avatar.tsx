@@ -20,8 +20,6 @@ export const Avatar = (props: AvatarProps) => {
 		alt
 	} = props;
 
-	const mods: Mods = {};
-
 	const styles = useMemo<CSSProperties>(() => {
 		return {
 			width: size || 100,
