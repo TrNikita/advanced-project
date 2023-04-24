@@ -9,7 +9,6 @@ import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
 
 import cls from './Sidebar.module.scss';
 
-
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 

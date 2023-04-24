@@ -88,6 +88,7 @@ module.exports = {
 		'jsx-a11y/no-autofocus': 'off',
 		'react/no-array-index-key': 'off',
 		'trn-plugin/path-checker': ['error', { alias: '@' }],
+		'trn-plugin/public-api-imports': ['error', { alias: '@' }],
 		'no-multiple-empty-lines': ['error', { 'max': 2, 'maxBOF': 0, 'maxEOF': 0 }],
 		'import/order': [
 			'error',
