@@ -22,7 +22,7 @@ const options = [
 ];
 
 export const CountrySelect = memo(({
-	className, value, onChange, readonly,
+	value, onChange, readonly,
 }: CountrySelectProps) => {
 	const { t } = useTranslation();
 
@@ -38,7 +38,7 @@ export const CountrySelect = memo(({
 			label={t('Укажите страну')}
 			items={options}
 			readonly={readonly}
-			direction="top right"
+			direction='top right'
 		/>
 	);
 });

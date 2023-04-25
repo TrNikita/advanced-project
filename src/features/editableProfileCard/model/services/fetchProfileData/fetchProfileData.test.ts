@@ -1,6 +1,5 @@
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import { loginByUsername } from '@/features/AuthByUsername';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 import { fetchProfileData } from './fetchProfileData';
@@ -27,11 +26,9 @@ describe('fetchProfileData.test', () => {
 	});
 
 	test('error login', async () => {
-		const thunk = new TestAsyncThunk(loginByUsername);
+		const thunk = new TestAsyncThunk(fetchProfileData);
 		thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-ignore
-		const result = await thunk.callThunk();
+		const result = await thunk.callThunk('1');
 		expect(result.meta.requestStatus).toBe('rejected');
 	});
 });
