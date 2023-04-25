@@ -87,7 +87,18 @@ module.exports = {
 		'react/display-name': 'off',
 		'jsx-a11y/no-autofocus': 'off',
 		'react/no-array-index-key': 'off',
-		'trn-plugin/path-checker': ['error', { alias: '@' }],
+		'trn-plugin/path-checker': [
+			'error',
+			{
+				alias: '@',
+			},
+		],
+		'trn-plugin/layer-imports': [
+			'error',
+			{
+				alias: '@', ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+			},
+		],
 		'trn-plugin/public-api-imports': [
 			'error',
 			{
