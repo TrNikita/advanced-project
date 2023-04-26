@@ -1,3 +1,5 @@
+// ts-node ./scripts/refactoring/createPublicApiForSharedUI
+
 import path from 'path';
 
 import { Project } from 'ts-morph';

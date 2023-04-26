@@ -1,3 +1,6 @@
+// ts-node ./scripts/refactoring/updateImports
+
+
 import { Project } from 'ts-morph';
 
 
