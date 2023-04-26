@@ -139,22 +139,22 @@ Clear.args = {
 
 Оба сборщика адаптированы под основные фичи приложения.
 
-Вся конфигурация хранится в /config
-- /config/babel - babel
-- /config/build - конфигурация webpack
-- /config/jest - конфигурация тестовой среды
-- /config/storybook - конфигурация сторибука
+Вся конфигурация хранится в [/config](/config/babel)
+- [/config/babel - babel](/config/babel)
+- [/config/build - конфигурация webpack](/config/build)
+- [/config/jest - конфигурация тестовой среды](/config/jest)
+- [/config/storybook - конфигурация сторибука](/config/storybook)
 
-В папке `scripts` находятся различные скрипты для рефакторинга\упрощения написания кода\генерации отчетов и тд.
+В папке [/scripts](/scripts) находятся различные скрипты для рефакторинга\упрощения написания кода\генерации отчетов и тд.
 
 ----
 
 ## CI pipeline и pre commit хуки
 
-Конфигурация github actions находится в /.github/workflows.
+Конфигурация github actions находится в [/.github/workflows](/.github/workflows).
 В ci прогоняются все виды тестов, сборка проекта и сторибука, линтинг.
 
-В прекоммит хуках проверяем проект линтерами, конфиг в /.husky
+В прекоммит хуках проверяем проект линтерами, конфиг в [/.husky](/.husky)
 
 ----
 
