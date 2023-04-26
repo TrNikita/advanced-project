@@ -1249,6 +1249,13 @@
       "rate": 5,
       "feedback": "хорошая статья",
       "id": "RQFGyMC"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 4,
+      "feedback": "wfawf",
+      "id": "PIH8whf"
     }
   ],
   "profile-ratings": [

@@ -1,3 +1,5 @@
+//npm run generate:slice features ArticleSortSelector
+
 const createTemplate = require('./templates/createTemplate');
 
 

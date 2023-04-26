@@ -139,7 +139,7 @@ Clear.args = {
 
 Оба сборщика адаптированы под основные фичи приложения.
 
-Вся конфигурация хранится в [/config](/config/babel)
+Вся конфигурация хранится в [/config](/config)
 - [/config/babel - babel](/config/babel)
 - [/config/build - конфигурация webpack](/config/build)
 - [/config/jest - конфигурация тестовой среды](/config/jest)
