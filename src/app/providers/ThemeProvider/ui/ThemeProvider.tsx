@@ -15,7 +15,6 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider = (props: ThemeProviderProps) => {
-
 	const {
 		children, initialTheme
 	} = props;

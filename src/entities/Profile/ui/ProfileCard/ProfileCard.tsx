@@ -90,6 +90,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 		[cls.editing]: !readonly,
 	};
 
+	console.log('data.avatar',data?.avatar);
 	return (
 		<VStack
 			gap={'16'}
@@ -101,6 +102,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 					[className]
 				)}
 		>
+
 
 			{data?.avatar &&
 					(<HStack

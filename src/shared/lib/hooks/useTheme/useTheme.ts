@@ -13,6 +13,11 @@ interface UseThemeResult {
 export function useTheme(): UseThemeResult {
 	const { theme, setTheme } = useContext(ThemeContext);
 
+	if (theme) {
+		console.log('theme', theme);
+		document.body.className = theme;
+	}
+
 	const toggleTheme = () => {
 		let newTheme: Theme;
 		switch (theme) {
@@ -28,6 +33,8 @@ export function useTheme(): UseThemeResult {
 		default:
 			newTheme = Theme.LIGHT;
 		}
+
+		console.log('newTheme', newTheme);
 
 		setTheme?.(newTheme);
 		document.body.className = newTheme;
