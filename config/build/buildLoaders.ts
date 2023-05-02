@@ -23,7 +23,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 	const svgLoader = {
 		test: /\.svg$/,
 		use: ['@svgr/webpack']
-	}
+	};
 
 	const fileLoader =
 		{
@@ -32,7 +32,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 				{
 					loader: 'file-loader',
 				},
-			],º
+			],
 		};
 
 	return [

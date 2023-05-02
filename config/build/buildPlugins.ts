@@ -1,4 +1,4 @@
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import { BuildOptions } from './types/config';
 import CircularDependencyPlugin from 'circular-dependency-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
@@ -6,10 +6,7 @@ import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-
-import { BuildOptions } from './types/config';
-
-
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions):
 	webpack.WebpackPluginInstance[] {
 
