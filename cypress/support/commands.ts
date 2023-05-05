@@ -1,9 +1,12 @@
-Cypress.Commands.add('login', (email, password) => {});
+import {  login } from './commands/login';
+
+
+Cypress.Commands.add('login', login);
 
 declare global {
   namespace Cypress {
     interface Chainable {
-      login(email: string, password: string): Chainable<void>
+      login(email?: string, password?: string): Chainable<void>
     }
   }
 }
