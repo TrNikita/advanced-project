@@ -60,6 +60,8 @@ export const StarRating = memo((props: StarRatingProps) => {
 					onMouseEnter={onHover(starsNumber)}
 					onMouseLeave={onLeave}
 					onClick={onClick(starsNumber)}
+					data-testid={`StarRating.${starsNumber}`}
+					data-selected={currentStarsCount >= starsNumber}
 				/>
 			))}
 		</div>
