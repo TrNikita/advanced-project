@@ -1,9 +1,7 @@
 import { useContext } from 'react';
-
 import { LOCAL_STORAGE_THEME_KEY } from '../../../const/localStograge';
 import { Theme } from '../../../const/theme';
 import { ThemeContext } from '../../context/ThemeContext';
-
 
 interface UseThemeResult {
 	theme: Theme;
@@ -21,17 +19,17 @@ export function useTheme(): UseThemeResult {
 	const toggleTheme = () => {
 		let newTheme: Theme;
 		switch (theme) {
-		case Theme.DARK:
-			newTheme = Theme.LIGHT;
-			break;
-		case Theme.LIGHT:
-			newTheme = Theme.MAGENTA;
-			break;
-		case Theme.MAGENTA:
-			newTheme = Theme.DARK;
-			break;
-		default:
-			newTheme = Theme.LIGHT;
+			case Theme.DARK:
+				newTheme = Theme.LIGHT;
+				break;
+			case Theme.LIGHT:
+				newTheme = Theme.MAGENTA;
+				break;
+			case Theme.MAGENTA:
+				newTheme = Theme.DARK;
+				break;
+			default:
+				newTheme = Theme.LIGHT;
 		}
 
 		console.log('newTheme', newTheme);
@@ -42,6 +40,6 @@ export function useTheme(): UseThemeResult {
 	};
 	return {
 		theme: theme || Theme.LIGHT,
-		toggleTheme
+		toggleTheme,
 	};
 }

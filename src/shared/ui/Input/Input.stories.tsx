@@ -1,10 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-
 // eslint-disable-next-line trn-plugin/layer-imports
 import '@/app/styles/index.scss';
 import { Input } from './Input';
-
 
 export default {
 	title: 'shared/Input',

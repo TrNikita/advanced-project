@@ -1,11 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-
 import { Article } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
-
 
 export default {
 	title: 'features/ArticleRecommendationsList',
@@ -16,7 +13,9 @@ export default {
 	decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof ArticleRecommendationsList>;
 
-const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => <ArticleRecommendationsList {...args} />;
+const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => (
+	<ArticleRecommendationsList {...args} />
+);
 
 const article: Article = {
 	id: '1',
@@ -27,7 +26,7 @@ const article: Article = {
 	user: { id: '1', username: '' },
 	views: 123,
 	type: [],
-	subtitle: ''
+	subtitle: '',
 };
 
 export const Normal = Template.bind({});
@@ -43,5 +42,6 @@ Normal.parameters = {
 				{ ...article, id: '2' },
 				{ ...article, id: '3' },
 			],
-		}]
+		},
+	],
 };

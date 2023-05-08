@@ -1,24 +1,23 @@
 let profileId = '';
 
 describe('Пользователь заходит на страницу профиля', () => {
-	beforeEach(()=>{
+	beforeEach(() => {
 		cy.visit('');
-		cy.login().then(data=> {
+		cy.login().then((data) => {
 			profileId = data.id;
 			cy.visit(`profile/${data.id}`);
 		});
 	});
-	afterEach(()=>{
+	afterEach(() => {
 		cy.resetProfile(profileId);
 	});
-
 
 	it('И профиль успешно загружается', () => {
 		cy.getByTestId('ProfileCard.firstname').should('have.value', 'test');
 	});
 
 	it('И редактирует его', () => {
-		const newName= 'new';
+		const newName = 'new';
 		const lastname = 'lastname';
 		cy.updateProfile(newName, lastname);
 		cy.getByTestId('ProfileCard.firstname').should('have.value', newName);

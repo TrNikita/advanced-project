@@ -1,8 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-
 import { Code } from './Code';
-
 
 export default {
 	title: 'shared/Code',
@@ -16,7 +14,8 @@ const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
-	text: 'export default {\n' +
+	text:
+		'export default {\n' +
 		'\ttitle: \'shared/Code\',\n' +
 		'\tcomponent: Code,\n' +
 		'\targTypes: {\n' +
@@ -26,5 +25,5 @@ Normal.args = {
 		'\n' +
 		'const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;\n' +
 		'\n' +
-		'export const Normal = Template.bind({});'
+		'export const Normal = Template.bind({});',
 };

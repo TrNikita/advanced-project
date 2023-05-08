@@ -11,15 +11,15 @@ export const resetProfile = (profileId: string) => {
 		url: 'http://localhost:8000/profile/' + profileId,
 		headers: { Authorization: 'asdsad' },
 		body: {
-			'id': '3',
-			'first': 'test',
-			'lastname': 'user',
-			'age': 465,
-			'currency': 'RUB',
-			'country': 'Russia',
-			'city': 'Moscow',
-			'username': 'testUser',
-			'avatar': 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg'
+			id: '3',
+			first: 'test',
+			lastname: 'user',
+			age: 465,
+			currency: 'RUB',
+			country: 'Russia',
+			city: 'Moscow',
+			username: 'testUser',
+			avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
 		},
 	});
 };

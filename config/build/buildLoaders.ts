@@ -1,9 +1,7 @@
 import webpack from 'webpack';
-
 import { buildBabelLoader } from './loaders/buildBabelLoader';
 import { buildCssLoader } from './loaders/buildCssLoader';
 import { BuildOptions } from './types/config';
-
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 	const { isDev } = options;
@@ -22,18 +20,17 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
 	const svgLoader = {
 		test: /\.svg$/,
-		use: ['@svgr/webpack']
+		use: ['@svgr/webpack'],
 	};
 
-	const fileLoader =
-		{
-			test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-			use: [
-				{
-					loader: 'file-loader',
-				},
-			],
-		};
+	const fileLoader = {
+		test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+		use: [
+			{
+				loader: 'file-loader',
+			},
+		],
+	};
 
 	return [
 		fileLoader,

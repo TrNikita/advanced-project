@@ -1,6 +1,5 @@
 import { PluginItem } from '@babel/core';
 
-
 export default function (): PluginItem {
 	return {
 		visitor: {
@@ -14,9 +13,9 @@ export default function (): PluginItem {
 						if (props.includes(nodeName)) {
 							current.parentPath.remove();
 						}
-					}
+					},
 				});
-			}
+			},
 		},
 	};
 }

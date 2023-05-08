@@ -1,19 +1,15 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-
 import { ArticleList } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text } from '@/shared/ui/Text';
-
-
 import {
 	getArticlesPageError,
 	getArticlesPageIsLoading,
-	getArticlesPageView
+	getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { getArticles } from '../../model/slices/articlePageSlice';
-
 
 interface ArticleInfiniteListProps {
 	className?: string;
@@ -28,7 +24,7 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
 	const error = useSelector(getArticlesPageError);
 
 	if (error) {
-		return <Text text={t('Ошибка при загрузке статей')}/>;
+		return <Text text={t('Ошибка при загрузке статей')} />;
 	}
 
 	return (

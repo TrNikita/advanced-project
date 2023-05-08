@@ -1,6 +1,5 @@
 import { selectByTestId } from 'cypress/helpers/selectByTestId';
 
-
 describe('Роутинг', () => {
 	describe('Пользователь НЕ авторизован', () => {
 		it('Переход на главную страницу', () => {

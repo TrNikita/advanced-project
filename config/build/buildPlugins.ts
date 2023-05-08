@@ -6,13 +6,14 @@ import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-
 import { BuildOptions } from './types/config';
 
-
-export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions):
-	webpack.WebpackPluginInstance[] {
-
+export function buildPlugins({
+	paths,
+	isDev,
+	apiUrl,
+	project,
+}: BuildOptions): webpack.WebpackPluginInstance[] {
 	const isProd = !isDev;
 
 	const plugins = [
@@ -23,7 +24,7 @@ export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions):
 		new webpack.DefinePlugin({
 			__IS_DEV__: JSON.stringify(isDev),
 			__API__: JSON.stringify(apiUrl),
-			__PROJECT__: JSON.stringify(project)
+			__PROJECT__: JSON.stringify(project),
 		}),
 		new CircularDependencyPlugin({
 			exclude: /node_modules/,
@@ -47,15 +48,17 @@ export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions):
 	}
 
 	if (isProd) {
-		plugins.push(new MiniCssExtractPlugin({
-			filename: 'css/[name].[contenthash:8].css',
-			chunkFilename: 'css/[name].[contenthash:8].css',
-		}));
-		plugins.push(new CopyPlugin({
-			patterns: [
-				{ from: paths.locales, to: paths.buildLocales },
-			]
-		}));
+		plugins.push(
+			new MiniCssExtractPlugin({
+				filename: 'css/[name].[contenthash:8].css',
+				chunkFilename: 'css/[name].[contenthash:8].css',
+			}),
+		);
+		plugins.push(
+			new CopyPlugin({
+				patterns: [{ from: paths.locales, to: paths.buildLocales }],
+			}),
+		);
 	}
 
 	return plugins;

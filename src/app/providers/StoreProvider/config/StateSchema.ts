@@ -1,6 +1,12 @@
-import { AnyAction, CombinedState, Dispatch, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
+import {
+	AnyAction,
+	CombinedState,
+	Dispatch,
+	EnhancedStore,
+	Reducer,
+	ReducersMapObject,
+} from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-
 import { ArticleDetailsSchema } from '@/entities/Article';
 import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
@@ -11,7 +17,6 @@ import { UISchema } from '@/features/UI';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { ArticlePageSchema } from '@/pages/ArticlePage';
 import { rtkApi } from '@/shared/api/rtkApi';
-
 
 export interface StateSchema {
 	counter: CounterSchema;
@@ -31,11 +36,14 @@ export interface StateSchema {
 }
 
 export type StateSchemaKey = keyof StateSchema;
-export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
 
 export interface ReducerManager {
 	getReducerMap: () => ReducersMapObject<StateSchema>;
-	reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
+	reduce: (
+		state: StateSchema,
+		action: AnyAction,
+	) => CombinedState<StateSchema>;
 	add: (key: StateSchemaKey, reducer: Reducer) => void;
 	remove: (key: StateSchemaKey) => void;
 	// true - вмонтирован, false - демонтирован

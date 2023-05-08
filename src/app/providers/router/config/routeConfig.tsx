@@ -22,46 +22,45 @@ import {
 } from '@/shared/const/router';
 import { AppRouteProps } from '@/shared/types/router';
 
-
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
 	[AppRoutes.MAIN]: {
 		path: getRouteMain(),
-		element: <MainPage />
+		element: <MainPage />,
 	},
 	[AppRoutes.ABOUT]: {
 		path: getRouteAbout(),
-		element: <AboutPage />
+		element: <AboutPage />,
 	},
 	[AppRoutes.PROFILE]: {
 		path: getRouteProfile(':id'),
 		element: <ProfilePage />,
-		authOnly: true
+		authOnly: true,
 	},
 	[AppRoutes.ARTICLES]: {
 		path: getRouteArticles(),
 		element: <ArticlePage />,
-		authOnly: true
+		authOnly: true,
 	},
 	[AppRoutes.ARTICLES_DETAILS]: {
 		path: getRouteArticleDetails(':id'),
 		element: <ArticleDetailsPage />,
-		authOnly: true
+		authOnly: true,
 	},
 	[AppRoutes.ARTICLES_CREATE]: {
 		path: getRouteArticleCreate(),
 		element: <ArticleEditPage />,
-		authOnly: true
+		authOnly: true,
 	},
 	[AppRoutes.ARTICLES_EDIT]: {
 		path: getRouteArticleEdit(':id'),
 		element: <ArticleEditPage />,
-		authOnly: true
+		authOnly: true,
 	},
 	[AppRoutes.ADMIN_PANEL]: {
 		path: getRouteAdmin(),
 		element: <AdminPanelPage />,
 		authOnly: true,
-		roles: [UserRole.ADMIN, UserRole.MANAGER]
+		roles: [UserRole.ADMIN, UserRole.MANAGER],
 	},
 	[AppRoutes.FORBIDDEN]: {
 		path: getRouteForbidden(),
@@ -70,6 +69,6 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
 	// last
 	[AppRoutes.NOT_FOUND]: {
 		path: '*',
-		element: <NotFoundPage />
+		element: <NotFoundPage />,
 	},
 };

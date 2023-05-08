@@ -1,11 +1,16 @@
 // ts-node ./scripts/refactoring/createPublicApiForSharedUI
 
 import path from 'path';
-
 import { Project } from 'ts-morph';
 
-
-const PROJECT_LAYERS = ['app', 'entities', 'features', 'shared', 'pages', 'widgets'];
+const PROJECT_LAYERS = [
+	'app',
+	'entities',
+	'features',
+	'shared',
+	'pages',
+	'widgets',
+];
 
 const project = new Project({});
 project.addSourceFilesAtPaths('src/**/*.ts');
@@ -19,12 +24,16 @@ const files = project.getSourceFiles();
 const indexFilename = 'sort.ts';
 const layer = process.argv[2] || 'shared';
 const slice = 'ui';
-const dest = project.getDirectory(path.resolve(__dirname, '..', '..', 'src', layer, slice));
+const dest = project.getDirectory(
+	path.resolve(__dirname, '..', '..', 'src', layer, slice),
+);
 const directories = dest?.getDirectories();
 
 directories?.forEach((directory) => {
 	const folderName = directory.getPath();
-	const isIndexFileExist = directory.getSourceFile(`${folderName}/${indexFilename}`);
+	const isIndexFileExist = directory.getSourceFile(
+		`${folderName}/${indexFilename}`,
+	);
 
 	if (!isIndexFileExist) {
 		const filesInFolder = directory.getSourceFiles([
@@ -37,7 +46,9 @@ directories?.forEach((directory) => {
 		filesInFolder?.forEach((component) => {
 			const folderLen = folderName.length;
 			const moduleName = component.getBaseNameWithoutExtension();
-			const modulePath = `.${component.getFilePath().slice(folderLen, -4)}`;
+			const modulePath = `.${component
+				.getFilePath()
+				.slice(folderLen, -4)}`;
 			content += `export { ${moduleName} } from '${modulePath}';\n`;
 		});
 		console.log(content);
@@ -47,7 +58,9 @@ directories?.forEach((directory) => {
 			{ overwrite: true },
 		);
 
-		file.save().then(() => console.log(`${folderName} --> index.ts created!`));
+		file.save().then(() =>
+			console.log(`${folderName} --> index.ts created!`),
+		);
 	}
 });
 

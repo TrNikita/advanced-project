@@ -1,8 +1,6 @@
 // ts-node ./scripts/refactoring/updateImports
 
-
 import { Project } from 'ts-morph';
-
 
 const project = new Project({});
 
@@ -12,13 +10,20 @@ project.addSourceFilesAtPaths('src/**/*.tsx');
 const files = project.getSourceFiles();
 
 function isAbsolute(value: string) {
-	const layers = ['app', 'shared', 'entities', 'features', 'pages', 'widgets'];
-	return layers.some(layer => value.startsWith(layer));
+	const layers = [
+		'app',
+		'shared',
+		'entities',
+		'features',
+		'pages',
+		'widgets',
+	];
+	return layers.some((layer) => value.startsWith(layer));
 }
 
-files.forEach(sourceFile => {
+files.forEach((sourceFile) => {
 	const importDeclarations = sourceFile.getImportDeclarations();
-	importDeclarations.forEach(importDeclaration => {
+	importDeclarations.forEach((importDeclaration) => {
 		const value = importDeclaration.getModuleSpecifierValue();
 
 		if (isAbsolute(value)) {

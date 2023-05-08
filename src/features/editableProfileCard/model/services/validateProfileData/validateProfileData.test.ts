@@ -1,10 +1,7 @@
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-
 import { validateProfileData } from './validateProfileData';
-
 import { ValidateProfileErrors } from '../../consts/consts';
-
 
 const data = {
 	username: 'admin',
@@ -22,7 +19,11 @@ describe('validateProfileData.test', () => {
 	});
 
 	test('w/o first and last name', async () => {
-		const result = validateProfileData({ ...data, first: '', lastname: '' });
+		const result = validateProfileData({
+			...data,
+			first: '',
+			lastname: '',
+		});
 		expect(result).toEqual([ValidateProfileErrors.INCORRECT_USER_DATA]);
 	});
 

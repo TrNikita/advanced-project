@@ -1,23 +1,24 @@
 module.exports = {
-	'env': {
-		'browser': true,
-		'es2021': true,
-		'jest': true,
+	env: {
+		browser: true,
+		es2021: true,
+		jest: true,
 	},
-	'extends': [
+	extends: [
 		'eslint:recommended',
 		'plugin:react/recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:i18next/recommended',
 		'plugin:jsx-a11y/recommended',
 		'plugin:import/recommended',
+		'prettier',
 	],
-	'parser': '@typescript-eslint/parser',
-	'parserOptions': {
-		'ecmaVersion': 'latest',
-		'sourceType': 'module',
+	parser: '@typescript-eslint/parser',
+	parserOptions: {
+		ecmaVersion: 'latest',
+		sourceType: 'module',
 	},
-	'plugins': [
+	plugins: [
 		'react',
 		'@typescript-eslint',
 		'i18next',
@@ -25,31 +26,19 @@ module.exports = {
 		'react-hooks',
 		'trn-plugin',
 	],
-	'rules': {
-		'indent': [
-			'error',
-			'tab',
-		],
-		'linebreak-style': [
-			'error',
-			'unix',
-		],
-		'quotes': [
-			'error',
-			'single',
-		],
-		'semi': [
-			'error',
-			'always',
-		],
-		'object-curly-spacing': [
-			'error',
-			'always',
-		],
-		'react/jsx-indent': [2, 'tab'],
+	rules: {
+		// 'indent': [
+		// 	'error',
+		// 	'tab',
+		// ],
+		'linebreak-style': ['error', 'unix'],
+		quotes: ['error', 'single'],
+		semi: ['error', 'always'],
+		'object-curly-spacing': ['error', 'always'],
+		// 'react/jsx-indent': [2, 'tab'],
 		'react/jsx-filename-extension': [
 			1,
-			{ 'extensions': ['.js', '.jsx', '.tsx'] },
+			{ extensions: ['.js', '.jsx', '.tsx'] },
 		],
 		'no-unused-vars': 'off',
 		'react/react-in-jsx-scope': 'off',
@@ -58,11 +47,13 @@ module.exports = {
 		'no-undef': 'off',
 		'@typescript-eslint/ban-ts-comment': [
 			'error',
-			{ 'ts-ignore': 'allow-with-description' }],
+			{ 'ts-ignore': 'allow-with-description' },
+		],
 		'@typescript-eslint/no-var-requires': 'off',
 		'@typescript-eslint/no-non-null-assertion': 'off',
 		'@typescript-eslint/no-explicit-any': 'off',
-		'i18next/no-literal-string': ['error',
+		'i18next/no-literal-string': [
+			'error',
 			{
 				markupOnly: true,
 				ignoreAttribute: [
@@ -96,22 +87,27 @@ module.exports = {
 		'trn-plugin/layer-imports': [
 			'error',
 			{
-				alias: '@', ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+				alias: '@',
+				ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
 			},
 		],
 		'trn-plugin/public-api-imports': [
 			'error',
 			{
 				alias: '@',
-				testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+				testFilesPatterns: [
+					'**/*.test.*',
+					'**/*.story.*',
+					'**/StoreDecorator.tsx',
+				],
 			},
 		],
-		'no-multiple-empty-lines': ['error', { 'max': 2, 'maxBOF': 0, 'maxEOF': 0 }],
+		'no-multiple-empty-lines': ['error', { max: 2, maxBOF: 0, maxEOF: 0 }],
 		'import/order': [
 			'error',
 			{
-				'newlines-between': 'always',
-				'groups': [
+				'newlines-between': 'never',
+				groups: [
 					'builtin',
 					'external',
 					'internal',
@@ -119,30 +115,32 @@ module.exports = {
 					'parent',
 					'index',
 				],
-				'pathGroups': [
+				pathGroups: [
 					{
-						'pattern': '@/**',
-						'group': 'internal',
+						pattern: '@/**',
+						group: 'internal',
 					},
 				],
-				'alphabetize': {
-					'order': 'asc',
-					'caseInsensitive': true,
+				alphabetize: {
+					order: 'asc',
+					caseInsensitive: true,
 				},
 			},
 		],
-		'import/newline-after-import': [
-			'error',
-			{ 'count': 2 },
-		],
+		'import/newline-after-import': ['error', { count: 1 }],
 		'import/no-unresolved': 'off',
 		'import/named': 'off',
 		'import/default': 'off',
+		'@typescript-eslint/no-namespace': [
+			'error',
+			{ allowDeclarations: true },
+		],
+		'react/jsx-max-props-per-line': ['error', { maximum: 3 }],
 	},
 	globals: {
-		'__IS_DEV__': true,
-		'__API__': true,
-		'__PROJECT__': true,
+		__IS_DEV__: true,
+		__API__: true,
+		__PROJECT__: true,
 	},
 	overrides: [
 		{

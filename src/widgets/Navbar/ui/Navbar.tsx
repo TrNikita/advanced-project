@@ -1,7 +1,6 @@
 import React, { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/avatarDropdown';
@@ -12,9 +11,7 @@ import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 import { Text, TextTheme } from '@/shared/ui/Text';
-
 import cls from './Navbar.module.scss';
-
 
 interface NavbarProps {
 	className?: string;
@@ -49,12 +46,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 				>
 					{t('Создать статью')}
 				</AppLink>
-				<HStack
-					gap={'16'}
-					className={cls.actions}
-				>
-					<NotificationButton/>
-					<AvatarDropdown/>
+				<HStack gap={'16'} className={cls.actions}>
+					<NotificationButton />
+					<AvatarDropdown />
 				</HStack>
 			</header>
 		);
@@ -69,10 +63,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 			>
 				{t('Войти')}
 			</Button>
-			{isAuthModal && <LoginModal
-				isOpen={isAuthModal}
-				onClose={onCloseModal}
-			/>}
+			{isAuthModal && (
+				<LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+			)}
 		</header>
 	);
 });

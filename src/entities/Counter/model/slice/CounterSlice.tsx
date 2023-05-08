@@ -1,9 +1,6 @@
 import { PayloadAction } from '@reduxjs/toolkit';
-
 import { buildSlice } from '@/shared/lib/store';
-
 import { CounterSchema } from '../types/counterSchema';
-
 
 const initialState: CounterSchema = {
 	value: 0,
@@ -28,5 +25,5 @@ export const counterSlice = buildSlice({
 export const {
 	actions: counterActions,
 	reducer: counterReducer,
-	useActions: useCounterActions
+	useActions: useCounterActions,
 } = counterSlice;

@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
@@ -8,12 +7,8 @@ import { Input } from '@/shared/ui/Input';
 import { Loader } from '@/shared/ui/Loader';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
-
 import cls from './ProfileCard.module.scss';
-
-
 import { Profile } from '../../model/types/profile';
-
 
 interface ProfileCardProps {
 	className?: string;
@@ -46,7 +41,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 		onChangeUsername,
 		onChangeAvatar,
 		onChangeCurrency,
-		onChangeCounty
+		onChangeCounty,
 	} = props;
 
 	if (isLoading) {
@@ -54,15 +49,15 @@ export const ProfileCard = (props: ProfileCardProps) => {
 			<HStack
 				justify={'center'}
 				max
-				className={
-					classNames(
-						cls.ProfileCard,
-						{ [cls.loading]: true },
-						[className]
-					)}
+				className={classNames(
+					cls.ProfileCard,
+					{ [cls.loading]: true },
+					[className],
+				)}
 			>
-				<Loader/>
-			</HStack>);
+				<Loader />
+			</HStack>
+		);
 	}
 
 	if (error) {
@@ -70,12 +65,10 @@ export const ProfileCard = (props: ProfileCardProps) => {
 			<HStack
 				justify={'center'}
 				max
-				className={
-					classNames(
-						cls.ProfileCard,
-						{},
-						[className, cls.error]
-					)}
+				className={classNames(cls.ProfileCard, {}, [
+					className,
+					cls.error,
+				])}
 			>
 				<Text
 					theme={TextTheme.ERROR}
@@ -83,35 +76,26 @@ export const ProfileCard = (props: ProfileCardProps) => {
 					text={t('Попробуйте обновить приложение')}
 					align={TextAlign.CENTER}
 				/>
-			</HStack>);
+			</HStack>
+		);
 	}
 
 	const mods: Mods = {
 		[cls.editing]: !readonly,
 	};
 
-	console.log('data.avatar',data?.avatar);
+	console.log('data.avatar', data?.avatar);
 	return (
 		<VStack
 			gap={'16'}
 			max
-			className={
-				classNames(
-					cls.ProfileCard,
-					mods,
-					[className]
-				)}
+			className={classNames(cls.ProfileCard, mods, [className])}
 		>
-
-
-			{data?.avatar &&
-					(<HStack
-						justify='center'
-						max
-						className={cls.avatarWrapper}>
-						<Avatar src={data?.avatar}/>
-					</HStack>
-					)}
+			{data?.avatar && (
+				<HStack justify="center" max className={cls.avatarWrapper}>
+					<Avatar src={data?.avatar} />
+				</HStack>
+			)}
 			<Input
 				value={data?.first}
 				placeholder={t('Ваше имя')}

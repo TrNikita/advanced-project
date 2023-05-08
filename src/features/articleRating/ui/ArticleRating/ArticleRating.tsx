@@ -1,13 +1,13 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-
 import { RatingCard } from '@/entities/Rating';
 import { getUserAuthData } from '@/entities/User';
 import { Skeleton } from '@/shared/ui/Skeleton';
-
-import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi';
-
+import {
+	useGetArticleRating,
+	useRateArticle,
+} from '../../api/articleRatingApi';
 
 export interface ArticleRatingProps {
 	className?: string;
@@ -21,34 +21,43 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
 
 	const { data, isLoading } = useGetArticleRating({
 		articleId,
-		userId: userData?.id ?? ''
+		userId: userData?.id ?? '',
 	});
 
 	const [rateArticleMutation] = useRateArticle();
 
-	const handleRateArticle = useCallback((startsCount: number, feedback?: string) => {
-		try {
-			rateArticleMutation({
-				userId: userData?.id ?? '',
-				articleId,
-				rate: startsCount,
-				feedback
-			});
-		} catch (e) {
-			console.log('error', e);
-		}
-	}, [articleId, rateArticleMutation, userData?.id]);
+	const handleRateArticle = useCallback(
+		(startsCount: number, feedback?: string) => {
+			try {
+				rateArticleMutation({
+					userId: userData?.id ?? '',
+					articleId,
+					rate: startsCount,
+					feedback,
+				});
+			} catch (e) {
+				console.log('error', e);
+			}
+		},
+		[articleId, rateArticleMutation, userData?.id],
+	);
 
-	const onAccept = useCallback((startsCount: number, feedback?: string) => {
-		handleRateArticle(startsCount, feedback);
-	}, [handleRateArticle]);
+	const onAccept = useCallback(
+		(startsCount: number, feedback?: string) => {
+			handleRateArticle(startsCount, feedback);
+		},
+		[handleRateArticle],
+	);
 
-	const onCancel = useCallback((startsCount: number) => {
-		handleRateArticle(startsCount);
-	}, [handleRateArticle]);
+	const onCancel = useCallback(
+		(startsCount: number) => {
+			handleRateArticle(startsCount);
+		},
+		[handleRateArticle],
+	);
 
 	if (isLoading) {
-		return <Skeleton width='100%' height={120}/>;
+		return <Skeleton width="100%" height={120} />;
 	}
 
 	const rating = data?.[0];
@@ -60,7 +69,9 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
 			rate={rating?.rate}
 			className={className}
 			title={t('Оцените статью')}
-			feedbackTitle={t('Оставьте свой отзыв о статье, это поможет улучшить качество')}
+			feedbackTitle={t(
+				'Оставьте свой отзыв о статье, это поможет улучшить качество',
+			)}
 			hasFeedback
 		/>
 	);

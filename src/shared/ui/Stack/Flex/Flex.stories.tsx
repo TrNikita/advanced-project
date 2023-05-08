@@ -1,8 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-
 import { Flex } from './Flex';
-
 
 export default {
 	title: 'shared/Flex',
@@ -23,7 +21,7 @@ Row.args = {
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 		</>
-	)
+	),
 };
 export const RowGap4 = Template.bind({});
 RowGap4.args = {
@@ -35,7 +33,7 @@ RowGap4.args = {
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 		</>
-	)
+	),
 };
 export const RowGap8 = Template.bind({});
 RowGap8.args = {
@@ -47,7 +45,7 @@ RowGap8.args = {
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 		</>
-	)
+	),
 };
 export const RowGap16 = Template.bind({});
 RowGap16.args = {
@@ -59,7 +57,7 @@ RowGap16.args = {
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 		</>
-	)
+	),
 };
 
 export const Column = Template.bind({});
@@ -72,7 +70,7 @@ Column.args = {
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 		</>
-	)
+	),
 };
 
 export const ColumnGap16 = Template.bind({});
@@ -86,7 +84,7 @@ ColumnGap16.args = {
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 		</>
-	)
+	),
 };
 
 export const ColumnGap32 = Template.bind({});
@@ -100,7 +98,7 @@ ColumnGap32.args = {
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 		</>
-	)
+	),
 };
 
 export const ColumnAlignEnd = Template.bind({});
@@ -114,5 +112,5 @@ ColumnAlignEnd.args = {
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 			<div>Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 		</>
-	)
+	),
 };

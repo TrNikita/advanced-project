@@ -1,10 +1,9 @@
-export type Mods = Record<string, boolean | string | undefined>
+export type Mods = Record<string, boolean | string | undefined>;
 
-export function classNames
-(
+export function classNames(
 	cls: string,
 	mods: Mods = {},
-	additional: Array<string | undefined> = []
+	additional: Array<string | undefined> = [],
 ): string {
 	return [
 		cls,
@@ -12,9 +11,8 @@ export function classNames
 		...Object.entries(mods)
 			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			.filter(([_, value]) => Boolean(value))
-			.map(([className]) => className)
-	]
-		.join(' ');
+			.map(([className]) => className),
+	].join(' ');
 }
 
 // 'remove-btn hovered selectable pdg'

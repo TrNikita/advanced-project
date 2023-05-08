@@ -1,13 +1,10 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-
 // eslint-disable-next-line trn-plugin/layer-imports
 import '@/app/styles/index.scss';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
-
 import { Text, TextSize, TextTheme } from './Text';
-
 
 export default {
 	title: 'shared/Text',
@@ -21,7 +18,7 @@ const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 export const TextAndTitle = Template.bind({});
 TextAndTitle.args = {
 	title: 'Title asd asd',
-	text: 'Description Description Description'
+	text: 'Description Description Description',
 };
 
 export const onlyTitle = Template.bind({});
@@ -31,13 +28,13 @@ onlyTitle.args = {
 
 export const onlyText = Template.bind({});
 onlyText.args = {
-	text: 'Description Description Description'
+	text: 'Description Description Description',
 };
 
 export const TextAndTitleDark = Template.bind({});
 TextAndTitleDark.args = {
 	title: 'Title asd asd',
-	text: 'Description Description Description'
+	text: 'Description Description Description',
 };
 TextAndTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
@@ -49,7 +46,7 @@ onlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const onlyTextDark = Template.bind({});
 onlyTextDark.args = {
-	text: 'Description Description Description'
+	text: 'Description Description Description',
 };
 onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
@@ -57,26 +54,26 @@ export const Error = Template.bind({});
 Error.args = {
 	title: 'Title asd asd',
 	text: 'Description Description Description',
-	theme: TextTheme.ERROR
+	theme: TextTheme.ERROR,
 };
 
 export const SizeS = Template.bind({});
 SizeS.args = {
 	title: 'Title asd asd',
 	text: 'Description Description Description',
-	size: TextSize.S
+	size: TextSize.S,
 };
 
 export const SizeM = Template.bind({});
 SizeM.args = {
 	title: 'Title asd asd',
 	text: 'Description Description Description',
-	size: TextSize.M
+	size: TextSize.M,
 };
 
 export const SizeL = Template.bind({});
 SizeL.args = {
 	title: 'Title asd asd',
 	text: 'Description Description Description',
-	size: TextSize.L
+	size: TextSize.L,
 };

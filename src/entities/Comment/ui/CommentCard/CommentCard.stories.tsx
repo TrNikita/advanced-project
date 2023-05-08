@@ -1,8 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-
 import { CommentCard } from './CommentCard';
-
 
 export default {
 	title: 'entities/Comment/CommentCard',
@@ -12,7 +10,9 @@ export default {
 	},
 } as ComponentMeta<typeof CommentCard>;
 
-const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />;
+const Template: ComponentStory<typeof CommentCard> = (args) => (
+	<CommentCard {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {

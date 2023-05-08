@@ -2,11 +2,7 @@ import { User } from '../../../src/entities/User';
 import { USER_LOCALSTORAGE_KEY } from '../../../src/shared/const/localStograge';
 import { selectByTestId } from '../../helpers/selectByTestId';
 
-
-export const login = (
-	username = 'testUser',
-	password = '123'
-) => {
+export const login = (username = 'testUser', password = '123') => {
 	cy.request({
 		method: 'POST',
 		url: 'http://localhost:8000/login',
@@ -15,7 +11,10 @@ export const login = (
 			password,
 		},
 	}).then(({ body }) => {
-		window.localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(body));
+		window.localStorage.setItem(
+			USER_LOCALSTORAGE_KEY,
+			JSON.stringify(body),
+		);
 		return body;
 	});
 };
