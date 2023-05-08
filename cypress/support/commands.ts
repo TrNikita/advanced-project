@@ -11,4 +11,19 @@ Cypress.Commands.addAll(articleCommands);
 Cypress.Commands.addAll(commentsCommands);
 Cypress.Commands.addAll(ratingCommands);
 
+// Пример работы на фикстурах
+// Cypress.Commands.overwrite('intercept', () => {
+// 	const FIXTURE_MODE = process.env.FIXTURE_MODE;
+// 	if (FIXTURE_MODE === 'READ') {
+// 		readFixture()
+// 	}
+// 	if (FIXTURE_MODE === 'WRITE') {
+// 		const fixtureName = req.method + req.url + hash(req.body);
+// 		createFixture(fixtureName, req.body);
+// 	}
+// 	if (FIXTURE_MODE === 'ARI') {
+
+// 	}
+// });
+
 export {};
