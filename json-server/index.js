@@ -1,4 +1,5 @@
 const fs = require('fs');
+const http = require('http');
 const https = require('https');
 const path = require('path');
 const jsonServer = require('json-server');
@@ -61,7 +62,15 @@ server.use(router);
 
 // запуск сервера
 const PORT = 8443;
+const HTTP_PORT = 8000;
+
 const httpsServer = https.createServer(options, server);
+const httpServer = http.createServer(server);
+
 httpsServer.listen(PORT, () => {
-	console.log('server is running on 8000 port');
+	console.log(`server is running on ${PORT} port`);
+});
+
+httpServer.listen(HTTP_PORT, () => {
+	console.log(`server is running on ${HTTP_PORT} port`);
 });
