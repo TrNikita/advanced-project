@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { getUserInited, initAuthData } from '@/entities/User';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -38,11 +39,12 @@ const App = () => {
 			on={
 				<div className={classNames('app_redesigned', {}, [])}>
 					<Suspense fallback="">
-						<Navbar />
-						<div className="content-page">
-							<Sidebar />
-							{inited && <AppRouter />}
-						</div>
+						<MainLayout
+							header={<Navbar />}
+							content={<AppRouter />}
+							sidebar={<Sidebar />}
+							toolbar={<div>toolbar</div>}
+						/>
 					</Suspense>
 				</div>
 			}
