@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Counter } from '@/entities/Counter';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
-import { Button } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/deprecated/Button';
 import { Page } from '@/widgets/Page';
 
 const MainPage = () => {
