@@ -36,8 +36,8 @@ export default {
 			'@': paths.src,
 		};
 
-		// @ts-ignore ok with config storybook
 		config!.module!.rules = config!.module!.rules!.map(
+			// @ts-ignore ok with config storybook
 			(rule: RuleSetRule) => {
 				if (/svg/.test(rule.test as string)) {
 					return { ...rule, exclude: /\.svg$/i };
