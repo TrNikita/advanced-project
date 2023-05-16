@@ -22,10 +22,9 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
 	const sidebarItemsList = useSelector(getSidebarItems);
 
 	const onToggle = () => {
-		setCollapsed((prevState) => !prevState);
+		console.log(collapsed);
+		setCollapsed((prev) => !prev);
 	};
-
-	console.log('sidebarItemsList', sidebarItemsList);
 
 	const itemsList = useMemo(
 		() =>
@@ -41,13 +40,13 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
 
 	return (
 		<ToggleFeatures
-			feature={'isAppRedesigned'}
+			feature='isAppRedesigned'
 			on={
 				<aside
-					data-testid="sidebar"
+					data-testid='sidebar'
 					className={classNames(
 						cls.SidebarRedesigned,
-						{ [cls.collapsed]: collapsed },
+						{ [cls.collapsedRedesigned]: collapsed },
 						[className],
 					)}
 				>
@@ -61,10 +60,14 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
 					<Icon
 						data-testid="sidebar-toggle"
 						onClick={onToggle}
-						className={cls.collapsedBtn}
+						className={cls.collapseBtn}
 						Svg={ArrowIcon}
-					>
-					</Icon>
+						clickable
+					/>
+					<div className={cls.switchers}>
+						<ThemeSwitcher />
+						<LangSwitcher short={collapsed} className={cls.lang} />
+					</div>
 				</aside>
 			}
 			off={
@@ -79,16 +82,19 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
 					<Button
 						data-testid="sidebar-toggle"
 						onClick={onToggle}
-						className={cls.collapsedBtn}
+						className={cls.collapseBtn}
 						theme={ButtonTheme.BACKGROUND_INVERTED}
 						size={ButtonSize.L}
 						square
 					>
 						{collapsed ? '>' : '<'}
 					</Button>
+					<VStack role="navigation" gap="8" className={cls.items}>
+						{itemsList}
+					</VStack>
 					<div className={cls.switchers}>
 						<ThemeSwitcher />
-						<LangSwitcher className={cls.lang} short={collapsed} />
+						<LangSwitcher short={collapsed} className={cls.lang} />
 					</div>
 				</aside>
 			}

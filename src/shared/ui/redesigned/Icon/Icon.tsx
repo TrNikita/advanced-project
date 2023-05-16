@@ -34,6 +34,7 @@ export const Icon = memo((props: IconProps) => {
 			width={width}
 			height={height}
 			{...otherProps}
+			onClick={undefined}
 		/>
 	);
 

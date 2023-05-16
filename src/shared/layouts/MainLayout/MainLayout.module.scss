@@ -7,13 +7,14 @@
 
 .sidebar {
     grid-area: sidebar;
-    justify-self: center;
     padding: 32px;
 }
 
 .content {
     grid-area: content;
     justify-self: center;
+
+    width: 100%;
     min-width: 1200px;
     padding: 32px;
 }
