@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
@@ -13,15 +13,13 @@ import { Icon } from '@/shared/ui/redesigned/Icon';
 import cls from './SidebarItem.module.scss';
 import { SidebarItemType } from '../../model/types/sidebar';
 
-interface SideBarItemProps {
+interface SidebarItemProps {
 	item: SidebarItemType;
 	collapsed: boolean;
 }
 
-export const SidebarItem = memo((props: SideBarItemProps) => {
+export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
 	const { t } = useTranslation();
-	const { item, collapsed } = props;
-
 	const isAuth = useSelector(getUserAuthData);
 
 	if (item.authOnly && !isAuth) {
@@ -34,9 +32,10 @@ export const SidebarItem = memo((props: SideBarItemProps) => {
 			on={
 				<AppLink
 					to={item.path}
-					className={classNames(cls.item, {
+					className={classNames(cls.itemRedesigned, {
 						[cls.collapsedRedesigned]: collapsed,
 					})}
+					activeClassName={cls.active}
 				>
 					<Icon Svg={item.Icon} />
 					<span className={cls.link}>{t(item.text)}</span>
