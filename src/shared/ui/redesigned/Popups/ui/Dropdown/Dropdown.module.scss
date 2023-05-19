@@ -1,0 +1,46 @@
+.menu {
+    position: absolute;
+    z-index: 10000;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--dark-bg-redesigned);
+}
+
+.item {
+    cursor: pointer;
+
+    width: 100%;
+    padding: 10px 25px;
+
+    color: var(--text-redesigned);
+
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.active {
+    background: var(--inverted-primary-color);
+}
+
+.optionsBottomLeft {
+    top: 100%;
+    right: 0;
+}
+
+.optionsBottomRight {
+    top: 100%;
+    left: 0;
+}
+
+.optionsTopLeft {
+    right: 0;
+    bottom: 100%;
+}
+
+.optionsTopRight {
+    bottom: 100%;
+    left: 0;
+}
