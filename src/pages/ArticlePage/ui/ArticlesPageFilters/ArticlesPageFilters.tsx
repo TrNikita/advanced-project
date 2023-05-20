@@ -20,7 +20,7 @@ import {
 	getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
-import { articlePageActions } from '../../model/slices/articlePageSlice';
+import { articlesPageActions } from '../../model/slices/articlePageSlice';
 
 interface ArticlesPageFiltersProps {
 	className?: string;
@@ -44,16 +44,16 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
 
 	const onChangeView = useCallback(
 		(view: ArticleView) => {
-			dispatch(articlePageActions.setView(view));
-			dispatch(articlePageActions.setPage(1));
+			dispatch(articlesPageActions.setView(view));
+			dispatch(articlesPageActions.setPage(1));
 		},
 		[dispatch],
 	);
 
 	const onChangeSort = useCallback(
 		(newSort: ArticleSortField) => {
-			dispatch(articlePageActions.setSort(newSort));
-			dispatch(articlePageActions.setPage(1));
+			dispatch(articlesPageActions.setSort(newSort));
+			dispatch(articlesPageActions.setPage(1));
 			debouncedFetchData();
 		},
 		[dispatch, debouncedFetchData],
@@ -61,8 +61,8 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
 
 	const onChangeOrder = useCallback(
 		(newOrder: SortOrder) => {
-			dispatch(articlePageActions.setOrder(newOrder));
-			dispatch(articlePageActions.setPage(1));
+			dispatch(articlesPageActions.setOrder(newOrder));
+			dispatch(articlesPageActions.setPage(1));
 			debouncedFetchData();
 		},
 		[dispatch, debouncedFetchData],
@@ -70,8 +70,8 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
 
 	const onChangeSearch = useCallback(
 		(search: string) => {
-			dispatch(articlePageActions.setSearch(search));
-			dispatch(articlePageActions.setPage(1));
+			dispatch(articlesPageActions.setSearch(search));
+			dispatch(articlesPageActions.setPage(1));
 			debouncedFetchData();
 		},
 		[dispatch, debouncedFetchData],
@@ -79,8 +79,8 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
 
 	const onChangeType = useCallback(
 		(value: ArticleType) => {
-			dispatch(articlePageActions.setType(value));
-			dispatch(articlePageActions.setPage(1));
+			dispatch(articlesPageActions.setType(value));
+			dispatch(articlesPageActions.setPage(1));
 			fetchData();
 		},
 		[dispatch, fetchData],

@@ -10,9 +10,9 @@ import {
 	ArticleView,
 	ArticleSortField,
 } from '@/entities/Article';
-import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localStograge';
+import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { SortOrder } from '@/shared/types/sort';
-import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { ArticlePageSchema } from '../types/articlePageSchema';
 
 const articlesAdapter = createEntityAdapter<Article>({
@@ -23,8 +23,8 @@ export const getArticles = articlesAdapter.getSelectors<StateSchema>(
 	(state) => state.articlePage || articlesAdapter.getInitialState(),
 );
 
-const articlePageSlice = createSlice({
-	name: 'articlePageSlice',
+const articlesPageSlice = createSlice({
+	name: 'articlesPageSlice',
 	initialState: articlesAdapter.getInitialState<ArticlePageSchema>({
 		isLoading: false,
 		error: undefined,
@@ -82,6 +82,7 @@ const articlePageSlice = createSlice({
 			.addCase(fetchArticlesList.fulfilled, (state, action) => {
 				state.isLoading = false;
 				state.hasMore = action.payload.length >= state.limit;
+
 				if (action.meta.arg.replace) {
 					articlesAdapter.setAll(state, action.payload);
 				} else {
@@ -95,5 +96,5 @@ const articlePageSlice = createSlice({
 	},
 });
 
-export const { reducer: articlePageReducer, actions: articlePageActions } =
-	articlePageSlice;
+export const { reducer: articlesPageReducer, actions: articlesPageActions } =
+	articlesPageSlice;

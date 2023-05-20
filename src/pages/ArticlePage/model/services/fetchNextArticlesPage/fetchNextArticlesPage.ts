@@ -5,7 +5,7 @@ import {
 	getArticlesPageIsLoading,
 	getArticlesPageNum,
 } from '../../selectors/articlesPageSelectors';
-import { articlePageActions } from '../../slices/articlePageSlice';
+import { articlesPageActions } from '../../slices/articlePageSlice';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
 export const fetchNextArticlesPage = createAsyncThunk<
@@ -19,7 +19,7 @@ export const fetchNextArticlesPage = createAsyncThunk<
 	const isLoading = getArticlesPageIsLoading(getState());
 
 	if (hasMore && !isLoading) {
-		dispatch(articlePageActions.setPage(page + 1));
+		dispatch(articlesPageActions.setPage(page + 1));
 		dispatch(fetchArticlesList({ replace: false }));
 	}
 });

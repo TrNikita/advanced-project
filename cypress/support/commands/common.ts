@@ -1,5 +1,5 @@
+import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { User } from '../../../src/entities/User';
-import { USER_LOCALSTORAGE_KEY } from '../../../src/shared/const/localStograge';
 import { selectByTestId } from '../../helpers/selectByTestId';
 
 export const login = (username = 'testUser', password = '123') => {
