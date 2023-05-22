@@ -44,13 +44,15 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 	const validateErrors = useSelector(getProfileValidateErrors);
 
 	const validateErrorTranslates = {
-		[ValidateProfileErrors.SERVER_ERROR]: t('Ошибка сервера'),
-		[ValidateProfileErrors.NO_DATA]: t('Данные не указаны'),
-		[ValidateProfileErrors.INCORRECT_AGE]: t('Некорректный возраст'),
-		[ValidateProfileErrors.INCORRECT_USER_DATA]: t(
-			'Имя и фамилия обязательны для заполнения',
+		[ValidateProfileErrors.SERVER_ERROR]: t(
+			'Серверная ошибка при сохранении',
 		),
 		[ValidateProfileErrors.INCORRECT_COUNTRY]: t('Некорректный регион'),
+		[ValidateProfileErrors.NO_DATA]: t('Данные не указаны'),
+		[ValidateProfileErrors.INCORRECT_USER_DATA]: t(
+			'Имя и фамилия обязательны',
+		),
+		[ValidateProfileErrors.INCORRECT_AGE]: t('Некорректный возраст'),
 	};
 
 	useInitialEffect(() => {
@@ -87,16 +89,16 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 		[dispatch],
 	);
 
-	const onChangeAvatar = useCallback(
+	const onChangeUsername = useCallback(
 		(value?: string) => {
-			dispatch(profileActions.updateProfile({ avatar: value || '' }));
+			dispatch(profileActions.updateProfile({ username: value || '' }));
 		},
 		[dispatch],
 	);
 
-	const onChangeUsername = useCallback(
+	const onChangeAvatar = useCallback(
 		(value?: string) => {
-			dispatch(profileActions.updateProfile({ username: value || '' }));
+			dispatch(profileActions.updateProfile({ avatar: value || '' }));
 		},
 		[dispatch],
 	);
@@ -117,14 +119,14 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers}>
-			<VStack gap={'8'} max className={classNames('', {}, [className])}>
+			<VStack gap="8" max className={classNames('', {}, [className])}>
 				<EditableProfileCardHeader />
 				{validateErrors?.length &&
 					validateErrors.map((err) => (
 						<Text
+							key={err}
 							theme={TextTheme.ERROR}
 							text={validateErrorTranslates[err]}
-							key={err}
 							data-testid="EditableProfileCard.Error"
 						/>
 					))}
@@ -135,12 +137,12 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 					readonly={readonly}
 					onChangeFirstname={onChangeFirstname}
 					onChangeLastname={onChangeLastname}
-					onChangeCity={onChangeCity}
 					onChangeAge={onChangeAge}
-					onChangeAvatar={onChangeAvatar}
+					onChangeCity={onChangeCity}
 					onChangeUsername={onChangeUsername}
+					onChangeAvatar={onChangeAvatar}
 					onChangeCurrency={onChangeCurrency}
-					onChangeCounty={onChangeCountry}
+					onChangeCountry={onChangeCountry}
 				/>
 			</VStack>
 		</DynamicModuleLoader>
