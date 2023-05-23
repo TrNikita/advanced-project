@@ -26,16 +26,6 @@
     }
 }
 
-.inverted {
-    .title {
-        color: var(--inverted-primary-color);
-    }
-
-    .text {
-        color: var(--inverted-secondary-color);
-    }
-}
-
 .left {
     text-align: left;
 }
@@ -50,7 +40,7 @@
 
 .size_s {
     .title {
-        font: var(--font-s-redesigned);
+        font: var(--font-m-redesigned);
     }
 
     .text {
@@ -60,11 +50,11 @@
 
 .size_m {
     .title {
-        font: var(--font-m-redesigned);
+        font: var(--font-l-redesigned);
     }
 
     .text {
-        font: var(--font-l-redesigned);
+        font: var(--font-m-redesigned);
     }
 }
 
@@ -75,5 +65,12 @@
 
     .text {
         font: var(--font-l-redesigned);
+    }
+}
+
+.bold {
+    .title,
+    .text {
+        font-weight: 700;
     }
 }
