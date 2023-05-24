@@ -1,6 +1,8 @@
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { toggleFeatures } from '@/shared/lib/features';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import cls from './NotificationList.module.scss';
 import { useNotifications } from '../../api/notificationApi';
@@ -16,6 +18,12 @@ export const NotificationList = memo((props: NotificationListProps) => {
 		pollingInterval: 5000,
 	});
 
+	const Skeleton = toggleFeatures({
+		name: 'isAppRedesigned',
+		on: () => SkeletonRedesigned,
+		off: () => SkeletonDeprecated,
+	});
+
 	if (isLoading) {
 		return (
 			<VStack
@@ -23,9 +31,9 @@ export const NotificationList = memo((props: NotificationListProps) => {
 				max
 				className={classNames(cls.NotificationList, {}, [className])}
 			>
-				<Skeleton width="150px" border="8px" height="80px" />
-				<Skeleton width="150px" border="8px" height="80px" />
-				<Skeleton width="150px" border="8px" height="80px" />
+				<Skeleton width="100%" border="8px" height="80px" />
+				<Skeleton width="100%" border="8px" height="80px" />
+				<Skeleton width="100%" border="8px" height="80px" />
 			</VStack>
 		);
 	}
