@@ -12,7 +12,6 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from '@/widgets/Page';
 import cls from './ArticlePage.module.scss';
-import { useArticleItemById } from '../../model/selectors/articlesPageSelectors';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageReducer } from '../../model/slices/articlePageSlice';
@@ -33,10 +32,6 @@ const ArticlePage = (props: ArticlePageProps) => {
 	const { className } = props;
 	const dispatch = useAppDispatch();
 	const [searchParams] = useSearchParams();
-
-	const articleItem = useArticleItemById('3');
-
-	console.log('articleItem', articleItem);
 
 	const onLoadNextPart = useCallback(() => {
 		dispatch(fetchNextArticlesPage());
@@ -63,7 +58,6 @@ const ArticlePage = (props: ArticlePageProps) => {
 								[className],
 							)}
 						>
-							<ArticlesPageFilters />
 							<ArticleInfiniteList className={cls.list} />
 							<ArticlePageGreeting />
 						</Page>
