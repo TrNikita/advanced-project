@@ -16,9 +16,9 @@ export const DetailsContainer = memo((props: DetailsContainerProps) => {
 	return (
 		<Card
 			className={className}
+			max
 			fullHeight
 			border={'round'}
-			max
 			padding={'24'}
 		>
 			<ArticleDetails id={id} />

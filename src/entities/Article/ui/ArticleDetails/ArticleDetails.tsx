@@ -72,7 +72,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
 	if (isLoading) {
 		content = (
-			<div>
+			<>
 				<Skeleton
 					className={cls.avatar}
 					width={200}
@@ -83,7 +83,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 				<Skeleton width={600} height={24} />
 				<Skeleton width="100%" height={200} />
 				<Skeleton width="100%" height={200} />
-			</div>
+			</>
 		);
 	} else if (error) {
 		content = (
