@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { toggleFeatures } from '@/shared/lib/features';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
@@ -17,10 +17,6 @@ interface ModalProps {
 
 const ANIMATION_DELAY = 200;
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 export const Modal = (props: ModalProps) => {
 	const { className, children, isOpen, onClose, lazy } = props;
 

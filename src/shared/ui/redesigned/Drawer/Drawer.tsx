@@ -7,8 +7,8 @@ import {
 import { toggleFeatures } from '@/shared/lib/features';
 import cls from './Drawer.module.scss';
 import { useTheme } from '../../../lib/hooks/useTheme/useTheme';
-import { Overlay } from '../../redesigned/Overlay/Overlay';
-import { Portal } from '../../redesigned/Portal/Portal';
+import { Overlay } from '../Overlay/Overlay';
+import { Portal } from '../Portal/Portal';
 
 interface DrawerProps {
 	className?: string;
@@ -124,10 +124,6 @@ const DrawerAsync = (props: DrawerProps) => {
 	return <DrawerContent {...props} />;
 };
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 export const Drawer = (props: DrawerProps) => {
 	return (
 		<AnimationProvider>

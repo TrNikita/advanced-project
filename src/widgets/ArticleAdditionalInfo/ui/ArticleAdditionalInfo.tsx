@@ -6,7 +6,6 @@ import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
-import cls from './ArticleAdditionalInfo.module.scss';
 
 interface ArticleAdditionalInfoProps {
 	className?: string;
@@ -24,7 +23,7 @@ export const ArticleAdditionalInfo = memo(
 		return (
 			<VStack gap={'32'}>
 				<div
-					className={classNames(cls.ArticleAdditionalInfo, {}, [
+					className={classNames('', {}, [
 						className,
 					])}
 				>
