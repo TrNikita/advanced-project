@@ -40,10 +40,10 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
 
 	return (
 		<ToggleFeatures
-			feature='isAppRedesigned'
+			feature="isAppRedesigned"
 			on={
 				<aside
-					data-testid='sidebar'
+					data-testid="sidebar"
 					className={classNames(
 						cls.SidebarRedesigned,
 						{ [cls.collapsedRedesigned]: collapsed },

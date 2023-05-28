@@ -59,12 +59,14 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 			feature={'isAppRedesigned'}
 			on={
 				<div
-					className={classNames(cls.ArticleSortSelectorRedesigned, {}, [
-						className,
-					])}
+					className={classNames(
+						cls.ArticleSortSelectorRedesigned,
+						{},
+						[className],
+					)}
 				>
 					<VStack gap={'8'}>
-						<Text text={t('сортировать по')}/>
+						<Text text={t('сортировать по')} />
 						<ListBox
 							items={sortFieldOptions}
 							value={sort}

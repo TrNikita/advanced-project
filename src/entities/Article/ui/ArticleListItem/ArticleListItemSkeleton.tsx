@@ -71,12 +71,7 @@ export const ArticleListItemSkeleton = memo(
 		}
 
 		return (
-			<div
-				className={classNames(mainClass, {}, [
-					className,
-					cls[view],
-				])}
-			>
+			<div className={classNames(mainClass, {}, [className, cls[view]])}>
 				<Card className={cls.card}>
 					<div className={cls.imageWrapper}>
 						<Skeleton
