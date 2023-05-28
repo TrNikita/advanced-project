@@ -23,7 +23,7 @@ interface InputProps extends HTMLInputProps {
 	value?: string | number;
 	label?: string;
 	onChange?: (value: string) => void;
-	autoFocus?: boolean;
+	autofocus?: boolean;
 	readonly?: boolean;
 	addonLeft?: ReactNode;
 	addonRight?: ReactNode;
@@ -37,7 +37,7 @@ export const Input = memo((props: InputProps) => {
 		onChange,
 		type = 'text',
 		placeholder,
-		autoFocus,
+		autofocus,
 		readonly,
 		addonLeft,
 		addonRight,
@@ -45,16 +45,15 @@ export const Input = memo((props: InputProps) => {
 		size = 'm',
 		...otherProps
 	} = props;
-
 	const ref = useRef<HTMLInputElement>(null);
 	const [isFocused, setIsFocused] = useState(false);
 
 	useEffect(() => {
-		if (autoFocus) {
+		if (autofocus) {
 			setIsFocused(true);
 			ref.current?.focus();
 		}
-	}, [autoFocus]);
+	}, [autofocus]);
 
 	const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		onChange?.(e.target.value);
@@ -89,10 +88,10 @@ export const Input = memo((props: InputProps) => {
 				value={value}
 				onChange={onChangeHandler}
 				className={cls.input}
-				onBlur={onBlur}
 				onFocus={onFocus}
-				placeholder={placeholder}
+				onBlur={onBlur}
 				readOnly={readonly}
+				placeholder={placeholder}
 				{...otherProps}
 			/>
 			<div className={cls.addonRight}>{addonRight}</div>
@@ -101,7 +100,7 @@ export const Input = memo((props: InputProps) => {
 
 	if (label) {
 		return (
-			<HStack max gap={'8'}>
+			<HStack max gap="8">
 				<Text text={label} />
 				{input}
 			</HStack>

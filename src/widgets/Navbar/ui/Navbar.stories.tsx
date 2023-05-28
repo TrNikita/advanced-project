@@ -3,7 +3,7 @@ import React from 'react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
-import Navbar from './Navbar';
+import { Navbar } from './Navbar';
 
 export default {
 	title: 'widget/Navbar',
