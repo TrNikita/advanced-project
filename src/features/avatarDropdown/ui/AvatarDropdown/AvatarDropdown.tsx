@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
 	getUserAuthData,
 	isUserAdmin,
@@ -14,7 +14,6 @@ import {
 } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
@@ -25,12 +24,12 @@ interface AvatarDropdownProps {
 }
 
 export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
-	const { t } = useTranslation();
 	const { className } = props;
-	const dispatch = useAppDispatch();
-	const authData = useSelector(getUserAuthData);
+	const { t } = useTranslation();
+	const dispatch = useDispatch();
 	const isAdmin = useSelector(isUserAdmin);
 	const isManager = useSelector(isUserManager);
+	const authData = useSelector(getUserAuthData);
 
 	const onLogout = useCallback(() => {
 		dispatch(userActions.logout());
@@ -64,24 +63,29 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 			onClick: onLogout,
 		},
 	];
+
 	return (
 		<ToggleFeatures
-			feature={'isAppRedesigned'}
+			feature="isAppRedesigned"
 			on={
 				<Dropdown
-					className={classNames('', {}, [className])}
 					direction="bottom left"
+					className={classNames('', {}, [className])}
 					items={items}
 					trigger={<Avatar size={40} src={authData.avatar} />}
 				/>
 			}
 			off={
 				<DropdownDeprecated
-					className={classNames('', {}, [className])}
 					direction="bottom left"
+					className={classNames('', {}, [className])}
 					items={items}
 					trigger={
-						<AvatarDeprecated size={30} src={authData.avatar} />
+						<AvatarDeprecated
+							fallbackInverted
+							size={30}
+							src={authData.avatar}
+						/>
 					}
 				/>
 			}
