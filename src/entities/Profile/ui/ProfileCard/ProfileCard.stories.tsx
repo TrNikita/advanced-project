@@ -1,10 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-// eslint-disable-next-line trn-plugin/layer-imports
-import '@/app/styles/index.scss';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import avatar from '@/shared/assets/tests/AvatarImg.jpeg';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { ProfileCard } from './ProfileCard';
 
 export default {
@@ -19,21 +18,28 @@ const Template: ComponentStory<typeof ProfileCard> = (args) => (
 	<ProfileCard {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.args = {
+const primaryArgs = {
 	data: {
 		username: 'admin',
-		age: 31,
-		country: Country.Russia,
-		lastname: 'Asd',
-		first: 'Qwe',
-		currency: Currency.EUR,
+		age: 22,
+		country: Country.Ukraine,
+		lastname: 'ulbi tv',
+		first: 'asd',
+		city: 'asf',
+		currency: Currency.USD,
 		avatar,
 	},
 };
 
-export const WithError = Template.bind({});
-WithError.args = {
+export const Primary = Template.bind({});
+Primary.args = primaryArgs;
+
+export const PrimaryRedesigned = Template.bind({});
+PrimaryRedesigned.args = primaryArgs;
+PrimaryRedesigned.decorators = [NewDesignDecorator];
+
+export const withError = Template.bind({});
+withError.args = {
 	error: 'true',
 };
 
