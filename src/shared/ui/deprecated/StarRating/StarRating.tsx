@@ -56,7 +56,7 @@ export const StarRating = memo((props: StarRatingProps) => {
 				[className],
 			)}
 		>
-			{stars.map((starNumber) => {
+			{stars.map((starNumber, index) => {
 				const commonProps = {
 					className: classNames(
 						cls.starIcon,
@@ -82,6 +82,7 @@ export const StarRating = memo((props: StarRatingProps) => {
 						feature="isAppRedesigned"
 						on={<Icon clickable={!isSelected} {...commonProps} />}
 						off={<IconDeprecated {...commonProps} />}
+						key={index}
 					/>
 				);
 			})}

@@ -2,7 +2,9 @@ import { createContext, ReactNode, useContext, useMemo, useState } from 'react';
 
 const ForceUpdateContext = createContext({
 	value: true,
-	forceUpdate: () => {},
+	forceUpdate: () => {
+		//
+	},
 });
 
 export const useForceUpdate = () => {
