@@ -170,7 +170,7 @@
       "id": "4",
       "title": "Scala news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://coursefreedl.com/wp-content/uploads/2020/01/Scala-Zero-To-Hero-Complete-Guide.jpg",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Scala-full-color.svg/640px-Scala-full-color.svg.png",
       "views": 10222,
       "createdAt": "24.01.2022",
       "userId": "1",
@@ -242,7 +242,7 @@
       "id": "7",
       "title": "Ruby news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://res.cloudinary.com/practicaldev/image/fetch/s--oqV3akcU--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/pgnw91fs7tpxn0wyeqh2.jpg",
+      "img": "https://repository-images.githubusercontent.com/260508883/8575bd80-a64d-11ea-87f1-eb8490de545e",
       "views": 100,
       "createdAt": "21.02.2022",
       "userId": "1",
@@ -529,8 +529,8 @@
     {
       "id": "19",
       "title": "Научная статья - Биология",
-      "subtitle": "БиологиЯ",
-      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "subtitle": "Биология",
+      "img": "https://profacademia.ru/storage/uploads/2022/01/18/2d85067d4fdf3f955b2de50c3926dffddae0e8e3.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -554,7 +554,7 @@
       "id": "20",
       "title": "Научная статья - Биология",
       "subtitle": "БиологиЯ",
-      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "img": "https://profacademia.ru/storage/uploads/2022/01/18/2d85067d4fdf3f955b2de50c3926dffddae0e8e3.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -578,7 +578,7 @@
       "id": "21",
       "title": "Научная статья - Биология",
       "subtitle": "БиологиЯ",
-      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "img": "https://profacademia.ru/storage/uploads/2022/01/18/2d85067d4fdf3f955b2de50c3926dffddae0e8e3.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -602,7 +602,7 @@
       "id": "22",
       "title": "Научная статья - Биология",
       "subtitle": "БиологиЯ",
-      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "img": "https://profacademia.ru/storage/uploads/2022/01/18/2d85067d4fdf3f955b2de50c3926dffddae0e8e3.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -1161,7 +1161,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_magenta_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlesPageWasOpened": true
@@ -1209,14 +1209,14 @@
   "profile": [
     {
       "id": "1",
-      "first": "jghwekllkkklr",
-      "lastname": "asfekkklkwr",
-      "age": 465,
+      "first": "Admin",
+      "lastname": "Last Name",
+      "age": 30,
       "currency": "EUR",
       "country": "Russia",
       "city": "Moscow",
-      "username": "admin213",
-      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
+      "username": "admin123",
+      "avatar": "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=740&t=st=1685635395~exp=1685635995~hmac=b858ef8b87cebdc7b750eeb2beba5a8c24d8c9d1b5454da403990b17b18666ea"
     },
     {
       "id": "2",

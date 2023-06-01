@@ -25,5 +25,6 @@
 		"password": "123",
 		"roles": ["ADMIN"],
 		"avatar": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
-	}
+	},
+  "Редактировать": "Редактировать"
 }
