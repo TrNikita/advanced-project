@@ -8,15 +8,17 @@ interface IconBaseProps extends SvgProps {
 	className?: string;
 	Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
 }
+
 interface NonClickableIconProps extends IconBaseProps {
 	clickable?: false;
 }
-interface ClickableIconProps extends IconBaseProps {
-	clickable?: true;
+
+interface ClickableBaseProps extends IconBaseProps {
+	clickable: true;
 	onClick: () => void;
 }
 
-type IconProps = NonClickableIconProps | ClickableIconProps;
+type IconProps = NonClickableIconProps | ClickableBaseProps;
 
 export const Icon = memo((props: IconProps) => {
 	const {
@@ -41,7 +43,7 @@ export const Icon = memo((props: IconProps) => {
 	if (clickable) {
 		return (
 			<button
-				type={'button'}
+				type="button"
 				className={cls.button}
 				onClick={props.onClick}
 				style={{ height, width }}
