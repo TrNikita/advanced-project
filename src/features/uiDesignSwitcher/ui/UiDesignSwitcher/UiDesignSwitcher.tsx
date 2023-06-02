@@ -54,13 +54,14 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
 		<HStack>
 			<Text text={t('Вариант интерфейса')} />
 			{isLoading ? (
-				<Skeleton width={100} height={40} />
+				<Skeleton width={100} height={40} border={'12px'} />
 			) : (
 				<ListBox
 					onChange={onChange}
 					items={items}
 					value={isAppRedesigned ? 'new' : 'old'}
 					className={className}
+					clickable
 				></ListBox>
 			)}
 		</HStack>

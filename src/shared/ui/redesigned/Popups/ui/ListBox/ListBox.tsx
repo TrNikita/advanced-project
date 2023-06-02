@@ -25,6 +25,7 @@ interface ListBoxProps<T extends string> {
 	readonly?: boolean;
 	direction?: DropdownDirection;
 	label?: string;
+	clickable?: boolean;
 }
 
 export function ListBox<T extends string>(props: ListBoxProps<T>) {
@@ -37,6 +38,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
 		readonly,
 		direction = 'bottom left',
 		label,
+		clickable
 	} = props;
 
 	const optionsClasses = [mapDirectionClass[direction], popupCls.menu];
@@ -83,6 +85,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
 										[popupCls.active]: active,
 										[popupCls.disabled]: item.disabled,
 										[popupCls.selected]: selected,
+										[popupCls.clickable]: clickable,
 									})}
 								>
 									{selected}
