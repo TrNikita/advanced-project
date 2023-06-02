@@ -10,7 +10,6 @@ const MainPage = () => {
 		<Page data-testid="MainPage">
 			<div>{t('username: admin')}</div>
 			<div>{t('password: 123')}</div>
-			<UiDesignSwitcher />
 		</Page>
 	);
 };
