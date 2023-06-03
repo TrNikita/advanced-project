@@ -1,3 +1,5 @@
+// npm run remove-feature isAppRedesigned on
+
 import { JsxAttribute, Node, Project, SyntaxKind } from 'ts-morph';
 
 const removedFeatureName = process.argv[2]; // example isArticleEnabled

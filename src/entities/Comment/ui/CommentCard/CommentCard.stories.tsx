@@ -28,7 +28,9 @@ Normal.args = normalArgs;
 
 export const NormalRedesigned = Template.bind({});
 NormalRedesigned.args = normalArgs;
-NormalRedesigned.decorators = [FeaturesFlagsDecorator({ isAppRedesigned:true })];
+NormalRedesigned.decorators = [
+	FeaturesFlagsDecorator({ isAppRedesigned: true }),
+];
 
 export const Loading = Template.bind({});
 Loading.args = {

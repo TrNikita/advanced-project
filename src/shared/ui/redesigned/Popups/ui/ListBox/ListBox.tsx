@@ -38,7 +38,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
 		readonly,
 		direction = 'bottom left',
 		label,
-		clickable
+		clickable,
 	} = props;
 
 	const optionsClasses = [mapDirectionClass[direction], popupCls.menu];

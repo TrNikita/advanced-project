@@ -10,7 +10,9 @@ export default {
 	},
 } as ComponentMeta<typeof ScrollToolbar>;
 
-const Template: ComponentStory<typeof ScrollToolbar> = (args) => <ScrollToolbar {...args} />;
+const Template: ComponentStory<typeof ScrollToolbar> = (args) => (
+	<ScrollToolbar {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};

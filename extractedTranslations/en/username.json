@@ -1,6 +1,6 @@
 {
-  " admin": "",
-  " admin\n\t\tpassword: 123": "",
-  " admin password: 123": "",
-  " admin; password: 123": ""
+	" admin": "",
+	" admin\n\t\tpassword: 123": "",
+	" admin password: 123": "",
+	" admin; password: 123": ""
 }
