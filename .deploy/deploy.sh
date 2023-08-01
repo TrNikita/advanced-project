@@ -1,4 +1,5 @@
 #~/advanced-project/.deploy/deploy.sh
+#chmod u+r+x ~/advanced-project/.deploy/deploy.sh
 
 cd ~/advanced-project
 
